@@ -30,7 +30,7 @@ class capital_or_report(StatesGroup):
 @dp.message_handler(commands=["start"], state="*")
 async def send_welcome(message: types.Message):
     await message.answer(
-        "Здравствуйте!\nЯ бот, предоставяющий информацию о предприятии Северсталь\nДля ознакомления с моими функциями "
+        "Бот, предоставяющий информацию о предприятии Северсталь.\n\nДля ознакомления с функциями "
         "нажмите на кнопку 'Помощь'",
         reply_markup=kb.markup1,
     )

@@ -93,10 +93,8 @@ hlp = KeyboardButton(helpp)
 btnV = KeyboardButton(vac)
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(financial_summary))
-    .add(KeyboardButton(about_company))
-    .add(btnV)
-    .add(hlp)
+    .row(KeyboardButton(financial_summary), KeyboardButton(about_company))
+    .row(KeyboardButton(btnV), KeyboardButton(hlp))
 )
 
 markupF = (
