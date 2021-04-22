@@ -30,7 +30,7 @@ class capital_or_report(StatesGroup):
 @dp.message_handler(commands=["start"], state="*")
 async def send_welcome(message: types.Message):
     await message.answer(
-        "Здравствуйте!!!\nЯ Северствль бот\nЧтобы ознакомиться с моими функциями на клавиатуре "
+        "Здравствуйте!\nЯ бот, предоставяющий информацию о предприятии Северсталь\nДля ознакомления с моими функциями "
         "нажмите на кнопку 'Помощь'",
         reply_markup=kb.markup1,
     )
@@ -194,7 +194,7 @@ async def go_back(message: types.Message):
 
 @dp.message_handler()
 async def send_welcome(message: types.Message):
-    await message.answer("Воспользуйтесь, пожалуйста, клавиатурой")
+    await message.answer("Используйте навигационные кнопки!")
 
 
 if __name__ == "__main__":
