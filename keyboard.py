@@ -94,7 +94,7 @@ btnV = KeyboardButton(vac)
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .row(KeyboardButton(financial_summary), KeyboardButton(about_company))
-    .row(KeyboardButton(vac), KeyboardButton(hlpp))
+    .row(KeyboardButton(vac), KeyboardButton(helpp))
 )
 
 markupF = (
