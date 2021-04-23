@@ -17,7 +17,8 @@ def yearly_report():
     for value in income_statement[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[1])
-    return f"Общий доход компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return f"Общий доход компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
+    {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
 def quartely_report():
@@ -36,7 +37,8 @@ def quartely_report():
     for value in income_statement[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[1])
-    return f"Общий доход компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return f"Общий доход компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
+    {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
 def quartely_capital():
@@ -53,7 +55,7 @@ def quartely_capital():
     for value in balance_sheet[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[-1])
-    return f"Общий доход компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - \
+    return f"Общий доход компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
 	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
@@ -71,7 +73,7 @@ def yearly_capital():
     for value in balance_sheet[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[-1])
-    return f"Общий доход компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - \
+    return f"Общий доход компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
 	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
@@ -89,7 +91,7 @@ def yearly_net_income():
     for value in net_income[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[4])
-    return f"Чистая прибыль компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - \
+    return f"Чистая прибыль компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
 	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
@@ -107,7 +109,7 @@ def quartely_net_income():
     for value in net_income[2:]:
         data.append(value.split()[0])
         total_revenue.append(value.split()[4])
-    return f"Чистая прибыль компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - \
+    return f"Чистая прибыль компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
 	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
 
 
