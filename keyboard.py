@@ -6,7 +6,7 @@ yearly_report = "Годовой отчёт"
 total_company_income = "Общий доход компании"
 share_capital = "Акционерный капитал"
 net_income = "Чистая прибыль"
-inf_about_report = "Финансовая отчётность компании"
+inf_about_report = "Финасовая отчётность компании"
 
 about_company = "О компании"
 history = "История компании"
@@ -73,7 +73,7 @@ list1 = [
     "Ступино",
     "Тверь",
 ]
-stock = "Узнать стоимость акций Северстали"
+stock = "Узнать стоимсть акций Северстали"
 history = "История Северстали"
 helpp = "Помощь"
 vac = "Вакансии"
@@ -93,8 +93,10 @@ hlp = KeyboardButton(helpp)
 btnV = KeyboardButton(vac)
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .row(KeyboardButton(financial_summary), KeyboardButton(about_company))
-    .row(KeyboardButton(vac), KeyboardButton(helpp))
+    .add(KeyboardButton(financial_summary))
+    .add(KeyboardButton(about_company))
+    .add(btnV)
+    .add(hlp)
 )
 
 markupF = (
