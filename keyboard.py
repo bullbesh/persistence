@@ -93,9 +93,9 @@ hlp = KeyboardButton(helpp)
 btnV = KeyboardButton(vac)
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(financial_summary))
     .add(KeyboardButton(about_company))
     .add(btnV)
+    .add(KeyboardButton(financial_summary))
     .add(hlp)
 )
 
@@ -210,4 +210,4 @@ keyboards = {
     "Молодым специалистам": markup6,
 }
 
-
+    
