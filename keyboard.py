@@ -6,7 +6,7 @@ yearly_report = "Годовой отчёт"
 total_company_income = "Общий доход компании"
 share_capital = "Акционерный капитал"
 net_income = "Чистая прибыль"
-inf_about_report = "Финасовая отчётность компании"
+inf_about_report = "Финансовая отчётность компании"
 
 about_company = "О компании"
 history = "История компании"
@@ -209,3 +209,5 @@ keyboards = {
     "Офис": markup5,
     "Молодым специалистам": markup6,
 }
+
+
