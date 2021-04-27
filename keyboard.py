@@ -93,7 +93,9 @@ btnkb = KeyboardButton(history)
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(financial_summary))
-    .row(KeyboardButton(about_company), KeyboardButton(vac), KeyboardButton(helpp),)
+    .add(KeyboardButton(about_company))
+    .add(KeyboardButton(vac))
+    .add(KeyboardButton(helpp))
 )
 
 markupF = (
