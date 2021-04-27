@@ -9,6 +9,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from Vacations import direction
 from reports import report
 import about_company as ac
+from support import BOT_SUPPORT
 
 logging.basicConfig(level=logging.INFO)
 
@@ -190,6 +191,10 @@ async def send_vactions(message: types.Message, state: FSMContext):
 @dp.message_handler(TextFilter(equals=kb.back), state="*")
 async def go_back(message: types.Message):
     await message.answer("Хорошо", reply_markup=kb.markup1)
+
+@dp.message_handler()
+async def send_help(message: types.Message, state='*'):
+    await message.answer(BOT_SUPPORT())
 
 
 @dp.message_handler()
