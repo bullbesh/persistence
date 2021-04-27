@@ -95,6 +95,13 @@ async def send_history(message):
     await message.answer(history_of_severstal())
 
 
+@dp.message_handler(TextFilter(equals=kb.support), state="*")
+async def send_support(message):
+    from support import BOT_SUPPORT
+
+    await message.answer(SUPPORT())
+
+
 @dp.message_handler(TextFilter(equals=kb.the_structure_of_the_company), state="*")
 async def send_structure(message: types.Message):
     await message.answer("Выберите раздел", reply_markup=kb.markup_structure)
