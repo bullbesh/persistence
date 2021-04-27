@@ -195,7 +195,7 @@ async def go_back(message: types.Message):
 
 @dp.message_handler()
 async def send_help(message: types.Message, state="*"):
-    await message.answer(BOT_SUPPORT)
+    await message.answer(BOT_SUPPORT, reply_markup=kb.markup1)
 
 
 @dp.message_handler()
