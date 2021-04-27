@@ -192,13 +192,14 @@ async def send_vactions(message: types.Message, state: FSMContext):
 async def go_back(message: types.Message):
     await message.answer("Хорошо", reply_markup=kb.markup1)
 
+
 @dp.message_handler()
-async def send_help(message: types.Message, state='*'):
+async def send_help(message: types.Message, state="*"):
     await message.answer(BOT_SUPPORT())
 
 
 @dp.message_handler()
-async def send_welcome(message: types.Message):
+async def send_error(message: types.Message, state='*'):
     await message.answer("Используйте навигационные кнопки!")
 
 
