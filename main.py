@@ -2,6 +2,8 @@ import logging
 import os
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text as TextFilter
+from aiogram.utils.markdown import bold, italic
+
 import keyboard as kb
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
@@ -195,12 +197,12 @@ async def go_back(message: types.Message):
 
 @dp.message_handler()
 async def send_help(message: types.Message, state="*"):
-    await message.answer(BOT_SUPPORT, reply_markup=kb.markup1)
+    await message.answer(BOT_SUPPORT, parse_mode=types.message.ParseMode.MARKDOWN)
 
 
 @dp.message_handler()
 async def send_error(message: types.Message, state='*'):
-    await message.answer("Используйте навигационные кнопки!")
+    await message.answer(bold("Используйте навигационные кнопки!"), parse_mode=types.ParseMode.MARKDOWN_V2)
 
 
 if __name__ == "__main__":
