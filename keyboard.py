@@ -89,16 +89,11 @@ more2 = "Больше"
 
 btnStock = KeyboardButton(stock)
 btnkb = KeyboardButton(history)
-hlp = KeyboardButton(helpp)
-btnV = KeyboardButton(vac)
+
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(financial_summary))
-    .row(
-        KeyboardButton(about_company),
-        KeyboardButton(btnV),
-        KeyboardButton(hlp),
-    )
+    .row(KeyboardButton(about_company), KeyboardButton(vac), KeyboardButton(helpp),)
 )
 
 markupF = (
@@ -211,5 +206,3 @@ keyboards = {
     "Офис": markup5,
     "Молодым специалистам": markup6,
 }
-
-    
