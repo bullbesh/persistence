@@ -195,9 +195,9 @@ async def go_back(message: types.Message):
     await message.answer("Хорошо", reply_markup=kb.markup1)
 
 
-@dp.message_handler()
+@dp.message_handler(TextFilter(equals=kb.helpp), state="*")
 async def send_help(message: types.Message, state="*"):
-    await message.answer(BOT_SUPPORT, parse_mode=types.message.ParseMode.MARKDOWN)
+    await message.answer(BOT_SUPPORT, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup1)
 
 
 @dp.message_handler()
