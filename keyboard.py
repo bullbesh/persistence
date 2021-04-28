@@ -87,9 +87,6 @@ back = "Назад"
 more1 = "Ещё"
 more2 = "Больше"
 
-btnStock = KeyboardButton(stock)
-btnkb = KeyboardButton(history)
-
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(financial_summary))
@@ -100,7 +97,7 @@ markup1 = (
 
 markupF = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(btnStock)
+    .add(KeyboardButton(stock))
     .add(KeyboardButton(inf_about_report))
     .add(KeyboardButton(back))
 )

@@ -88,7 +88,7 @@ async def send_stock(message: types.Message):
 
 @dp.message_handler(TextFilter(equals=kb.about_company), state="*")
 async def send_info_about_campany(message: types.Message):
-    await message.answer(ac.short_description, reply_markup=kb.markup_about_company)
+    await message.answer(ac.short_description, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.history), state="*")
@@ -139,7 +139,7 @@ async def send_other_businesses(message: types.Message):
 
 @dp.message_handler(TextFilter(equals=kb.strategy_and_strategic_priorities), state="*")
 async def send_strategy(message: types.Message):
-    await message.answer(ac.startegy, reply_markup=kb.markup_about_company)
+    await message.answer(ac.startegy, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.leadership), state="*")
