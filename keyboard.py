@@ -15,6 +15,7 @@ strategy_and_strategic_priorities = "Стратегия и стратегиче�
 leadership = "Руководство"
 management_of_severstal_management_JSC = "Руководство АО «Северсталь Менеджмент»"
 enterprise_management = "Руководство предприятий"
+board_members = "Члены совета директоров"
 
 severstal_resource = "«Северсталь Ресурс»"
 severstal_russian_steel = "«Северсталь Российская сталь»"
@@ -197,6 +198,7 @@ markup_of_leadership = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(management_of_severstal_management_JSC))
     .add(KeyboardButton(enterprise_management))
+    .add(KeyboardButton(board_members))
 )
 
 keyboards = {

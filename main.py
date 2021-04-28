@@ -163,6 +163,11 @@ async def send_enterprise_management(message: types.Message):
     await message.answer(ac.enterprise_management, reply_markup=kb.markup_about_company)
 
 
+@dp.message_handler(TextFilter(equals=kb.board_members), state='*')
+async def send_board_members(message: types.Message):
+    await message.answer(ac.board_members, reply_markup=kb.markup_about_company)
+
+
 @dp.message_handler(TextFilter(equals=kb.vac), state="*")
 async def send_direction(message):
     await vaca.vacation.set()
