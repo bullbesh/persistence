@@ -196,9 +196,10 @@ markup_structure = (
 
 markup_of_leadership = (
     ReplyKeyboardMarkup(resize_keyboard=True)
+    .add(KeyboardButton(board_members))
     .add(KeyboardButton(management_of_severstal_management_JSC))
     .add(KeyboardButton(enterprise_management))
-    .add(KeyboardButton(board_members))
+
 )
 
 keyboards = {
