@@ -1,21 +1,21 @@
 from selenium import webdriver
 
-FILE = ['manufacture_belgorod.txt', 
-	'manufacture_voroneg.txt',
-	'manufacture_moscow.txt',
-	'manufacture_eagle.txt',
-	'manufacture_yaroslavl.txt',
-	'manufacture_vorkuta.txt',
-	'manufacture_kolpino.txt',
-	'manufacture_olenegorsk.txt',
-	'manufacture_saint_petersburg.txt',
-	'manufacture_cherepovets.txt',
-	'manufacture_novosibirsk.txt',
-	'manufacture_kazan.txt'
+FILE = ['young_professional_belgorod.txt', 
+	'young_professional_voroneg.txt',
+	'young_professional_moscow.txt',
+	'young_professional_eagle.txt',
+	'young_professional_yaroslavl.txt',
+	'young_professional_vorkuta.txt',
+	'young_professional_kolpino.txt',
+	'young_professional_olenegorsk.txt',
+	'young_professional_saint_petersburg.txt',
+	'young_professional_cherepovets.txt',
+	'young_professional_novosibirsk.txt',
+	'young_professional_kazan.txt'
 	]
 
 driver = webdriver.Chrome()
-driver.get('https://career.severstal.com/vacancies/?direction=%D0%BE%D1%84%D0%B8%D1%81')
+driver.get('https://career.severstal.com/vacancies/?direction=%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B9+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82')
 vacations = driver.find_elements_by_class_name('all-vacancies__table-tbody')
 vacations_in_belgorod = []
 vacations_in_voroneg = []
@@ -43,7 +43,7 @@ while per != []:
 			break			
 		else:
 			if '₽' in per[6]:
-				items.append(', '.join(per[:7]))
+				items.append([', '.join(per[:7])])
 				del per[:7]
 				break
 			else:
@@ -81,7 +81,7 @@ for item in items:
 def save_file(path):
 	with open(path[0], 'w', encoding='utf-8') as file:
 		if vacations_in_belgorod == []:
-			file.write('К сожалению в Белгороде сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Белгороде сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_belgorod:
 				file.write(vacation + '\n')
@@ -89,7 +89,7 @@ def save_file(path):
 
 	with open(path[1], 'w', encoding='utf-8') as file:
 		if vacations_in_voroneg == []:
-			file.write('К сожалению в Воронеже сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Воронеже сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_voroneg:
 				file.write(vacation + '\n')
@@ -97,7 +97,7 @@ def save_file(path):
 
 	with open(path[2], 'w', encoding='utf-8') as file:
 		if vacations_in_moscow == []:
-			file.write('К сожалению в Москве сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Москве сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_moscow:
 				file.write(vacation + '\n')
@@ -105,7 +105,7 @@ def save_file(path):
 
 	with open(path[3], 'w', encoding='utf-8') as file:
 		if vacations_in_eagle == []:
-			file.write('К сожалению в Орле сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Орле сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_eagle:
 				file.write(vacation + '\n')
@@ -113,7 +113,7 @@ def save_file(path):
 
 	with open(path[4], 'w', encoding='utf-8') as file:
 		if vacations_in_yaroslavl == []:
-			file.write('К сожалению в Ярославле сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Ярославле сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_yaroslavl:
 				file.write(vacation + '\n')
@@ -121,7 +121,7 @@ def save_file(path):
 
 	with open(path[5], 'w', encoding='utf-8') as file:
 		if vacations_in_vorkuta == []:
-			file.write('К сожалению в Воркуте сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Воркуте сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_vorkuta:
 				file.write(vacation + '\n')
@@ -129,7 +129,7 @@ def save_file(path):
 
 	with open(path[6], 'w', encoding='utf-8') as file:
 		if vacations_in_kolpino == []:
-			file.write('К сожалению в Колпино сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Колпино сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_kolpino:
 				file.write(vacation + '\n')
@@ -137,15 +137,15 @@ def save_file(path):
 
 	with open(path[7], 'w', encoding='utf-8') as file:
 		if vacations_in_olenegorsk == []:
-			file.write('К сожалению в Оленегорске сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Оленегорске сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_olenegorsk:
-				file.write(vacation + '\n')
+				file.write(', '.join(vacation) + '\n')
 
 
 	with open(path[8], 'w', encoding='utf-8') as file:
 		if vacations_in_saint_petersburg == []:
-			file.write('К сожалению в Санкт-Петербурге сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Санкт-Петербурге сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_saint_petersburg:
 				file.write(vacation + '\n')
@@ -153,7 +153,7 @@ def save_file(path):
 
 	with open(path[9], 'w', encoding='utf-8') as file:
 		if vacations_in_cherepovets == []:
-			file.write('К сожалению в Череповце сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Череповце сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_cherepovets:
 				file.write(vacation + '\n')
@@ -161,7 +161,7 @@ def save_file(path):
 
 	with open(path[10], 'w', encoding='utf-8') as file:
 		if vacations_in_novosibirsk == []:
-			file.write('К сожалению в Новосибирске сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Новосибирске сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_novosibirsk:
 				file.write(vacation + '\n')
@@ -169,7 +169,7 @@ def save_file(path):
 
 	with open(path[11], 'w', encoding='utf-8') as file:
 		if vacations_in_kazan == []:
-			file.write('К сожалению в Казани сейчас нет работы на производстве' + '\n')
+			file.write('К сожалению в Казани сейчас нет работы для молодых специалистов' + '\n')
 		else:
 			for vacation in vacations_in_kazan:
 				file.write(vacation + '\n')
