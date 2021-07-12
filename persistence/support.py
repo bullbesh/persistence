@@ -1,4 +1,4 @@
-import keyboard as kb
+from . import keyboard as kb
 
 
 BOT_SUPPORT = (

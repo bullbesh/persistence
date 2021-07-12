@@ -4,14 +4,14 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.dispatcher.filters import Text as TextFilter
 from aiogram.utils.markdown import bold, italic
 
-import keyboard as kb
+from . import keyboard as kb
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
-from Vacations import direction
-from reports import report
-import about_company as ac
-from support import BOT_SUPPORT
+from .Vacations import direction
+from .reports import report
+from . import about_company as ac
+from .support import BOT_SUPPORT
 
 logging.basicConfig(level=logging.INFO)
 
@@ -210,5 +210,5 @@ async def send_error(message: types.Message, state='*'):
     await message.answer(bold("Используйте навигационные кнопки!"), parse_mode=types.ParseMode.MARKDOWN_V2)
 
 
-if __name__ == "__main__":
+def main():
     executor.start_polling(dp, skip_updates=True)
