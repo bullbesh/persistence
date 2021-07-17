@@ -220,6 +220,17 @@ flake8 = ">=3"
 pydocstyle = ">=2.1"
 
 [[package]]
+name = "flake8-polyfill"
+version = "1.0.2"
+description = "Polyfill package for Flake8 plugins"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+flake8 = "*"
+
+[[package]]
 name = "identify"
 version = "2.2.11"
 description = "File identification library for Python"
@@ -336,6 +347,18 @@ description = "Utility library for gitignore style pattern matching of file path
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "pep8-naming"
+version = "0.12.0"
+description = "Check PEP-8 naming conventions, plugin for flake8"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+flake8 = ">=3.9.1"
+flake8-polyfill = ">=1.0.2,<2"
 
 [[package]]
 name = "platformdirs"
@@ -543,7 +566,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "389beef10cf4910b8a5266030ba39c4b034315b1077aadf4e9f96744bdc3a97a"
+content-hash = "eb294f8284b443a735a4e5b72b11d441004439a85bb3b633ec91459f6f938dc4"
 
 [metadata.files]
 aiogram = [
@@ -656,6 +679,10 @@ flake8-comprehensions = [
 flake8-docstrings = [
     {file = "flake8-docstrings-1.6.0.tar.gz", hash = "sha256:9fe7c6a306064af8e62a055c2f61e9eb1da55f84bb39caef2b84ce53708ac34b"},
     {file = "flake8_docstrings-1.6.0-py2.py3-none-any.whl", hash = "sha256:99cac583d6c7e32dd28bbfbef120a7c0d1b6dde4adb5a9fd441c4227a6534bde"},
+]
+flake8-polyfill = [
+    {file = "flake8-polyfill-1.0.2.tar.gz", hash = "sha256:e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"},
+    {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
 ]
 identify = [
     {file = "identify-2.2.11-py2.py3-none-any.whl", hash = "sha256:7abaecbb414e385752e8ce02d8c494f4fbc780c975074b46172598a28f1ab839"},
@@ -821,6 +848,10 @@ pandas = [
 pathspec = [
     {file = "pathspec-0.8.1-py2.py3-none-any.whl", hash = "sha256:aa0cb481c4041bf52ffa7b0d8fa6cd3e88a2ca4879c533c9153882ee2556790d"},
     {file = "pathspec-0.8.1.tar.gz", hash = "sha256:86379d6b86d75816baba717e64b1a3a3469deb93bb76d613c9ce79edc5cb68fd"},
+]
+pep8-naming = [
+    {file = "pep8-naming-0.12.0.tar.gz", hash = "sha256:1f9a3ecb2f3fd83240fd40afdd70acc89695c49c333413e49788f93b61827e12"},
+    {file = "pep8_naming-0.12.0-py2.py3-none-any.whl", hash = "sha256:2321ac2b7bf55383dd19a6a9c8ae2ebf05679699927a3af33e60dd7d337099d3"},
 ]
 platformdirs = [
     {file = "platformdirs-2.0.2-py2.py3-none-any.whl", hash = "sha256:0b9547541f599d3d242078ae60b927b3e453f0ad52f58b4d4bc3be86aed3ec41"},
