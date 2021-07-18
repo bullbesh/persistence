@@ -8,7 +8,7 @@ from . import keyboard as kb
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
-from .Vacations import direction
+from .vacancies import direction
 from .reports import report
 from . import about_company as ac
 from .support import BOT_SUPPORT
