@@ -11,4 +11,5 @@ repos:
     - flake8-bugbear
     - flake8-comprehensions
     - flake8-docstrings
+    - flake8-import-order
     - pep8-naming
