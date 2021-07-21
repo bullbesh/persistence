@@ -1,6 +1,7 @@
 [flake8]
 docstring-convention=numpy
 max-complexity = 8
+import_order_style = smarkets
 ignore =
     # ingnore blank line separator rule on long one-line docstrings
     D205
