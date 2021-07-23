@@ -1,53 +1,54 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-financial_summary = "Финансовые показатели 📈"
-quartely_report = "Квартальный отчёт"
-yearly_report = "Годовой отчёт"
-total_company_income = "Общий доход компании"
-share_capital = "Акционерный капитал"
-net_income = "Чистая прибыль"
-inf_about_report = "Финансовая отчётность компании"
+FINANCIAL_PERFORMANCE = "Финансовые показатели 📈"
+QUARTELY_REPORT = "Квартальный отчёт"
+YEARLY_REPORT = "Годовой отчёт"
+TOTAL_COMPANY_INCOME = "Общий доход компании"
+SHARE_CAPITAL = "Акционерный капитал"
+NET_PROFIT = "Чистая прибыль"
+FINANCIAL_STATEMENTS = "Финансовая отчётность компании"
 
-about_company = "О компании 🏭"
-history = "История компании"
-the_structure_of_the_company = "Структура компании"
-strategy_and_strategic_priorities = "Стратегия и стратегические приоритеты"
-leadership = "Руководство"
-management_of_severstal_management_JSC = "Руководство АО «Северсталь Менеджмент»"
-enterprise_management = "Руководство предприятий"
-board_members = "Члены совета директоров"
+ABOUT_COMPANY = "О компании 🏭"
+HISTORY_OF_THE_COMPANY = "История компании"
+STRUCTURE_OF_THE_COMPANY = "Структура компании"
+STRATEGY_AND_STRATEGIC_PRIORITIES = "Стратегия и стратегические приоритеты"
+LEADERSHIP_OF_THE_COMPANY = "Руководство"
+DIRECTION_OF_SEVERSTAL_MANAGEMENT = "Руководство АО «Северсталь Менеджмент»"
+ENTERPRISE_MANAGEMENT = "Руководство предприятий"
+BOARD_OF_DIRECTORS_MEMBERS = "Члены совета директоров"
 
-severstal_resource = "«Северсталь Ресурс»"
-severstal_russian_steel = "«Северсталь Российская сталь»"
-key_assets = "Ключевые активы"
-trading_companies = "Торговые компании"
-further_redistribution_enterprises = "Предприятия дальнейшего передела"
-other_businesses = "Другие предприятия"
+SEVERSTAL_RESOURCE = "«Северсталь Ресурс»"
+SEVERSTAL_RUSSIAN_STEEL = "«Северсталь Российская сталь»"
+KEY_ASSETS_OF_THE_COMPANY = "Ключевые активы"
+TRADING_COMPANIES = "Торговые компании"
+FURTHER_REDISTRIBUTION_ENTERPRISES = "Предприятия дальнейшего передела"
+OTHER_ENTERPRISES = "Другие предприятия"
 
-cherep = "Череповец"
-moscow = "Москва"
-peter = "Санкт-Петербург"
-kolpino = "Колпино"
-vorkuta = "Воркута"
-belgorod = "Белгород"
-yakov = "Яковлево"
-kosto = "Костомукша"
-milk = "Шексна"
-work = "Строитель"
-voron = "Воронеж"
-sam = "Самара"
-yarik = "Ярославль"
-nn = "Нижний Новгород"
-mm = "Мурманск"
-kaz = "Казань"
-nab_chel = "Набережные Челны"
-bat = "Батайск"
-pod = "Подольск"
-mla = "Моссан-лез-Альпий"
-volgograd = "Волгоград"
-red_sul = "Красный Сулин"
-stupino = "Ступино"
-Tver = "Тверь"
+CHEREPOVETS = "Череповец"
+MOSCOW = "Москва"
+SAINT_PETERSBURG = "Санкт-Петербург"
+KOLPINO = "Колпино"
+VORKUTA = "Воркута"
+BELGOROD = "Белгород"
+YAKOVLEVO = "Яковлево"
+KOSTOMUKSHA = "Костомукша"
+SHEKSNA = "Шексна"
+STROITEL = "Строитель"
+VORONEJ = "Воронеж"
+SAMARA = "Самара"
+YAROSLAVL = "Ярославль"
+NIZHNY_NOVGOROD = "Нижний Новгород"
+MURMANSK = "Мурманск"
+KAZAN = "Казань"
+NABEREZHNYE_CHELNY = "Набережные Челны"
+BATAISK = "Батайск"
+PODOLSK = "Подольск"
+MOSSAN_LES_ALPILLES = "Моссан-лез-Альпий"
+VOLGOGRAD = "Волгоград"
+RED_SULIN = "Красный Сулин"
+STUPINO = "Ступино"
+TVER = "Тверь"
+
 list1 = [
     "Череповец",
     "Москва",
@@ -74,6 +75,7 @@ list1 = [
     "Ступино",
     "Тверь",
 ]
+
 stock = "Узнать стоимость акций Северстали"
 history = "История Северстали"
 helpp = "Помощь ⚙️"
@@ -90,8 +92,8 @@ more2 = "Больше"
 
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(financial_summary))
-    .add(KeyboardButton(about_company))
+    .add(KeyboardButton(FINANCIAL_PERFORMANCE))
+    .add(KeyboardButton(ABOUT_COMPANY))
     .add(KeyboardButton(vac))
     .add(KeyboardButton(helpp))
 )
@@ -99,15 +101,15 @@ markup1 = (
 markupF = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(stock))
-    .add(KeyboardButton(inf_about_report))
+    .add(KeyboardButton(FINANCIAL_STATEMENTS))
     .add(KeyboardButton(back))
 )
 
 markup_of_report = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(total_company_income))
-    .add(KeyboardButton(share_capital))
-    .add(KeyboardButton(net_income))
+    .add(KeyboardButton(TOTAL_COMPANY_INCOME))
+    .add(KeyboardButton(SHARE_CAPITAL))
+    .add(KeyboardButton(NET_PROFIT))
 )
 
 markup2 = (
@@ -121,84 +123,84 @@ markup2 = (
 
 markup3 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .row(KeyboardButton(cherep), KeyboardButton(moscow))
-    .add(KeyboardButton(peter))
+    .row(KeyboardButton(CHEREPOVETS), KeyboardButton(MOSCOW))
+    .add(KeyboardButton(SAINT_PETERSBURG))
     .row(
-        KeyboardButton(kolpino),
-        KeyboardButton(vorkuta),
-        KeyboardButton(belgorod),
-        KeyboardButton(yakov),
+        KeyboardButton(KOLPINO),
+        KeyboardButton(VORKUTA),
+        KeyboardButton(BELGOROD),
+        KeyboardButton(YAKOVLEVO),
     )
-    .row(KeyboardButton(kosto), KeyboardButton(milk), KeyboardButton(work))
+    .row(KeyboardButton(KOSTOMUKSHA), KeyboardButton(SHEKSNA), KeyboardButton(STROUTEL))
 )
 
 markup4 = (
     ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .row(KeyboardButton(kolpino), KeyboardButton(moscow), KeyboardButton(belgorod))
-    .row(KeyboardButton(peter), KeyboardButton(kosto))
-    .row(KeyboardButton(cherep), KeyboardButton(voron), KeyboardButton(yarik))
+    .row(KeyboardButton(KOLPINO), KeyboardButton(MOSCOW), KeyboardButton(BELGOROD))
+    .row(KeyboardButton(SAINT_PETERSBURG), KeyboardButton(KOSTOMUKSHA))
+    .row(KeyboardButton(CHEREPOVETS), KeyboardButton(VORONEJ), KeyboardButton(YAROSLAVL))
 )
 
 markup5 = (
     ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .row(KeyboardButton(peter), KeyboardButton(mla))
+    .row(KeyboardButton(SAINT_PETERSBURG), KeyboardButton(MOSSAN_LES_ALPILLES))
     .row(
-        KeyboardButton(moscow),
-        KeyboardButton(cherep),
-        KeyboardButton(sam),
-        KeyboardButton(kolpino),
+        KeyboardButton(MOSCOW),
+        KeyboardButton(CHEREPOVETS),
+        KeyboardButton(SAMARA),
+        KeyboardButton(KOLPINO),
     )
     .row(
-        KeyboardButton(yarik),
-        KeyboardButton(kaz),
-        KeyboardButton(bat),
-        KeyboardButton(pod),
+        KeyboardButton(YAROSLAVL),
+        KeyboardButton(KAZAN),
+        KeyboardButton(BATAISK),
+        KeyboardButton(PODOLSK),
     )
     .row(
-        KeyboardButton(volgograd),
-        KeyboardButton(voron),
-        KeyboardButton(stupino),
-        KeyboardButton(Tver),
+        KeyboardButton(VOLGOGRAD),
+        KeyboardButton(VORONEJ),
+        KeyboardButton(STUPINO),
+        KeyboardButton(TVER),
     )
-    .row(KeyboardButton(nn), KeyboardButton(red_sul))
+    .row(KeyboardButton(NIZHNY_NOVGOROD), KeyboardButton(RED_SULIN))
 )
 
 markup6 = (
     ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .add(KeyboardButton(yarik))
-    .add(KeyboardButton(cherep))
+    .add(KeyboardButton(YAROSLAVL))
+    .add(KeyboardButton(CHEREPOVETS))
 )
 
 markup_period = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(quartely_report))
-    .add(KeyboardButton(yearly_report))
+    .add(KeyboardButton(QUARTELY_REPORT))
+    .add(KeyboardButton(YEARLY_REPORT))
 )
 
-markup_about_company = (
+markup_ABOUT_COMPANY = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(history))
-    .add(KeyboardButton(the_structure_of_the_company))
-    .add(KeyboardButton(strategy_and_strategic_priorities))
-    .add(KeyboardButton(leadership))
+    .add(KeyboardButton(HISTORY_OF_THE_COMPANY))
+    .add(KeyboardButton(STRUCTURE_OF_THE_COMPANY))
+    .add(KeyboardButton(STRATEGY_AND_STRATEGIC_PRIORITIES))
+    .add(KeyboardButton(LEADERSHIP_OF_THE_COMPANY))
     .add(KeyboardButton(back))
 )
 
 markup_structure = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(severstal_russian_steel))
-    .add(KeyboardButton(severstal_resource))
-    .add(KeyboardButton(key_assets))
-    .add(KeyboardButton(trading_companies))
-    .add(KeyboardButton(further_redistribution_enterprises))
-    .add(KeyboardButton(other_businesses))
+    .add(KeyboardButton(SEVERSTAL_RUSSIAN_STEEL))
+    .add(KeyboardButton(SEVERSTAL_RESOURCE))
+    .add(KeyboardButton(KEY_ASSETS_OF_THE_COMPANY))
+    .add(KeyboardButton(TRADING_COMPANIES))
+    .add(KeyboardButton(FURTHER_REDISTRIBUTION_ENTERPRISES))
+    .add(KeyboardButton(OTHER_ENTERPRISES))
 )
 
 markup_of_leadership = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(board_members))
-    .add(KeyboardButton(management_of_severstal_management_JSC))
-    .add(KeyboardButton(enterprise_management))
+    .add(KeyboardButton(BOARD_OF_DIRECTORS_MEMBERS))
+    .add(KeyboardButton(DIRECTION_OF_SEVERSTAL_MANAGEMENT))
+    .add(KeyboardButton(ENTERPRISE_MANAGEMENT))
 
 )
 
