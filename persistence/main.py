@@ -186,7 +186,7 @@ async def send_vacationM(message: types.Message, state: FSMContext):
     await message.answer("Выберите город", reply_markup=kb.keyboards[data["vacation"]])
 
 
-@dp.message_handler(lambda message: message.text in kb.list1, state=vaca.city)
+@dp.message_handler(lambda message: message.text in kb.CITIES_LIST, state=vaca.city)
 async def send_vactions(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data["city"] = message.text
