@@ -1,5 +1,6 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+
 FINANCIAL_PERFORMANCE = "Финансовые показатели 📈"
 QUARTELY_REPORT = "Квартальный отчёт"
 YEARLY_REPORT = "Годовой отчёт"

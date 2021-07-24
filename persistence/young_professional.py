@@ -1,5 +1,6 @@
 from selenium import webdriver
 
+
 FILE = ['young_professional_belgorod.txt', 
 	'young_professional_voroneg.txt',
 	'young_professional_moscow.txt',
