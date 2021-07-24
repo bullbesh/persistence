@@ -88,7 +88,7 @@ async def send_stock(message: types.Message):
 
 @dp.message_handler(TextFilter(equals=kb.ABOUT_COMPANY), state="*")
 async def send_info_about_campany(message: types.Message):
-    await message.answer(ac.short_description, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
+    await message.answer(ac.SHORT_DESCRIPTION, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_SEVERSTAL_HISTORY), state="*")
@@ -106,40 +106,40 @@ async def send_structure(message: types.Message):
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RUSSIAN_STEEL), state="*")
 async def send_structure(message: types.Message):
     await message.answer(
-        ac.severstal_russian_steel, reply_markup=kb.markup_about_company
+        ac.SEVERSTAL_RUSSIAN_STEEL, reply_markup=kb.markup_about_company
     )
 
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RESOURCE), state="*")
 async def send_severstal_russian_steel(message: types.Message):
-    await message.answer(ac.severstal_resource, reply_markup=kb.markup_about_company)
+    await message.answer(ac.SEVERSTAL_RESOURCE, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.KEY_ASSETS_OF_THE_COMPANY), state="*")
 async def send_key_assets(message: types.Message):
-    await message.answer(ac.key_assets, reply_markup=kb.markup_about_company)
+    await message.answer(ac.COMPANY_KEY_ASSETS, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.TRADING_COMPANIES), state="*")
 async def send_trading_companies(message: types.Message):
-    await message.answer(ac.trading_companies, reply_markup=kb.markup_about_company)
+    await message.answer(ac.TRADING_COMPANIES, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.FURTHER_REDISTRIBUTION_ENTERPRISES), state="*")
 async def send_further_redistribution_enterprises(message: types.Message):
     await message.answer(
-        ac.further_redistribution_enterprises, reply_markup=kb.markup_about_company
+        ac.FURTHER_REDISTRIBUTION_ENTERPRISES, reply_markup=kb.markup_about_company
     )
 
 
 @dp.message_handler(TextFilter(equals=kb.OTHER_ENTERPRISES), state="*")
 async def send_other_businesses(message: types.Message):
-    await message.answer(ac.other_businesses, reply_markup=kb.markup_about_company)
+    await message.answer(ac.OTHER_ENTERPRISES, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.STRATEGY_AND_STRATEGIC_PRIORITIES), state="*")
 async def send_strategy(message: types.Message):
-    await message.answer(ac.startegy, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
+    await message.answer(ac.COMPANY_STARTEGY, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.LEADERSHIP_OF_THE_COMPANY), state="*")
@@ -154,18 +154,18 @@ async def send_leadership(message: types.Message):
 )
 async def send_management_of_severstal_management_JSC(message: types.Message):
     await message.answer(
-        ac.management_of_severstal_management_JSC, reply_markup=kb.markup_about_company
+        ac.DIRECTION_OF_SEVERSTAL_MANAGEMENT, reply_markup=kb.markup_about_company
     )
 
 
 @dp.message_handler(TextFilter(equals=kb.ENTERPRISE_MANAGEMENT), state="*")
 async def send_enterprise_management(message: types.Message):
-    await message.answer(ac.enterprise_management, reply_markup=kb.markup_about_company)
+    await message.answer(ac.ENTERPRISE_MANAGEMENT, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.BOARD_OF_DIRECTORS_MEMBERS), state='*')
 async def send_board_members(message: types.Message):
-    await message.answer(ac.board_members, reply_markup=kb.markup_about_company)
+    await message.answer(ac.BOARD_OF_DIRECTORS_MEMBERS, reply_markup=kb.markup_about_company)
 
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_VACANCIES), state="*")
