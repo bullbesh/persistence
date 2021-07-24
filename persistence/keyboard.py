@@ -76,33 +76,33 @@ list1 = [
     "Тверь",
 ]
 
-stock = "Узнать стоимость акций Северстали"
-history = "История Северстали"
-helpp = "Помощь ⚙️"
-vac = "Вакансии 👨‍💼"
+BUTTON_STOCK_PRICE = "Узнать стоимость акций Северстали"
+BUTTON_SEVERSTAL_HISTORY = "История Северстали"
+BUTTON_HELP = "Помощь ⚙️"
+BUTTON_VACANCIES = "Вакансии 👨‍💼"
 
-manufacture = "Производство"
-IT_and_Digital = "IT & Digital"
-office = "Офис"
-Young_professionals = "Молодым специалистам"
-back = "Назад"
+COMPANY_MANUFACTURE = "Производство"
+COMPANY_IT_AND_DIGITAL = "IT & Digital"
+COMPANY_OFFICE = "Офис"
+COMPANY_YOUNG_PROFESSIONALS = "Молодым специалистам"
+BUTTON_BACK = "Назад"
 
-more1 = "Ещё"
-more2 = "Больше"
+BUTTON_MORE1 = "Ещё"
+BUTTON_MORE2 = "Больше"
 
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(FINANCIAL_PERFORMANCE))
     .add(KeyboardButton(ABOUT_COMPANY))
-    .add(KeyboardButton(vac))
-    .add(KeyboardButton(helpp))
+    .add(KeyboardButton(BUTTON_VACANCIES))
+    .add(KeyboardButton(BUTTON_HELP))
 )
 
 markupF = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(stock))
+    .add(KeyboardButton(BUTTON_STOCK_PRICE))
     .add(KeyboardButton(FINANCIAL_STATEMENTS))
-    .add(KeyboardButton(back))
+    .add(KeyboardButton(BUTTON_BACK))
 )
 
 markup_of_report = (
@@ -114,11 +114,11 @@ markup_of_report = (
 
 markup2 = (
     ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .add(KeyboardButton(manufacture))
-    .add(KeyboardButton(IT_and_Digital))
-    .add(KeyboardButton(office))
-    .add(KeyboardButton(Young_professionals))
-    .add(KeyboardButton(back))
+    .add(KeyboardButton(COMPANY_MANUFACTURE))
+    .add(KeyboardButton(COMPANY_IT_AND_DIGITAL))
+    .add(KeyboardButton(COMPANY_OFFICE))
+    .add(KeyboardButton(COMPANY_YOUNG_PROFESSIONALS))
+    .add(KeyboardButton(BUTTON_BACK))
 )
 
 markup3 = (
@@ -183,7 +183,7 @@ markup_ABOUT_COMPANY = (
     .add(KeyboardButton(STRUCTURE_OF_THE_COMPANY))
     .add(KeyboardButton(STRATEGY_AND_STRATEGIC_PRIORITIES))
     .add(KeyboardButton(LEADERSHIP_OF_THE_COMPANY))
-    .add(KeyboardButton(back))
+    .add(KeyboardButton(BUTTON_BACK))
 )
 
 markup_structure = (

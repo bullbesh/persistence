@@ -79,19 +79,19 @@ async def send_report(message: types.Message, state: FSMContext):
     )
 
 
-@dp.message_handler(TextFilter(equals=kb.stock), state="*")
+@dp.message_handler(TextFilter(equals=kb.BUTTON_STOCK_PRICE), state="*")
 async def send_stock(message: types.Message):
     from stock import stocks
 
     await message.answer(stocks())
 
 
-@dp.message_handler(TextFilter(equals=kb.about_company), state="*")
+@dp.message_handler(TextFilter(equals=kb.ABOUT_COMPANY), state="*")
 async def send_info_about_campany(message: types.Message):
     await message.answer(ac.short_description, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.history), state="*")
+@dp.message_handler(TextFilter(equals=kb.BUTTON_SEVERSTAL_HISTORY), state="*")
 async def send_history(message):
     from history import history_of_severstal
 
@@ -168,7 +168,7 @@ async def send_board_members(message: types.Message):
     await message.answer(ac.board_members, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.vac), state="*")
+@dp.message_handler(TextFilter(equals=kb.BUTTON_VACANCIES), state="*")
 async def send_direction(message):
     await vaca.vacation.set()
     await message.answer("Выберите направление", reply_markup=kb.markup2)
@@ -195,12 +195,12 @@ async def send_vactions(message: types.Message, state: FSMContext):
     )
 
 
-@dp.message_handler(TextFilter(equals=kb.back), state="*")
+@dp.message_handler(TextFilter(equals=kb.BUTTON_BACK), state="*")
 async def go_back(message: types.Message):
     await message.answer("Хорошо", reply_markup=kb.markup1)
 
 
-@dp.message_handler(TextFilter(equals=kb.helpp), state="*")
+@dp.message_handler(TextFilter(equals=kb.BUTTON_HELP), state="*")
 async def send_help(message: types.Message, state="*"):
     await message.answer(BOT_SUPPORT, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup1)
 
