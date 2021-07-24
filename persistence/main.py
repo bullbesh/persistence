@@ -12,6 +12,8 @@ from .vacancies import direction
 from .reports import report
 from . import about_company as ac
 from .support import BOT_SUPPORT
+from .stock import stocks
+from .history import history_of_severstal
 
 logging.basicConfig(level=logging.INFO)
 
@@ -81,8 +83,6 @@ async def send_report(message: types.Message, state: FSMContext):
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_STOCK_PRICE), state="*")
 async def send_stock(message: types.Message):
-    from stock import stocks
-
     await message.answer(stocks())
 
 
@@ -93,8 +93,6 @@ async def send_info_about_campany(message: types.Message):
 
 @dp.message_handler(TextFilter(equals=kb.HISTORY_OF_THE_COMPANY), state="*")
 async def send_history(message):
-    from history import history_of_severstal
-
     await message.answer(history_of_severstal())
 
 
