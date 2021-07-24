@@ -15,6 +15,7 @@ from .support import BOT_SUPPORT
 from .stock import stocks
 from .history import history_of_severstal
 
+
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=os.getenv("TOKEN"))
