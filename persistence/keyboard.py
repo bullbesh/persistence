@@ -131,7 +131,7 @@ markup3 = (
         KeyboardButton(BELGOROD),
         KeyboardButton(YAKOVLEVO),
     )
-    .row(KeyboardButton(KOSTOMUKSHA), KeyboardButton(SHEKSNA), KeyboardButton(STROUTEL))
+    .row(KeyboardButton(KOSTOMUKSHA), KeyboardButton(SHEKSNA), KeyboardButton(STROITEL))
 )
 
 markup4 = (
