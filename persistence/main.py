@@ -44,12 +44,12 @@ async def send_help(message):
     await message.answer("Sorry")
 
 
-@dp.message_handler(TextFilter(equals=kb.financial_summary), state="*")
+@dp.message_handler(TextFilter(equals=kb.FINANCIAL_PERFORMANCE), state="*")
 async def send_financial_summary(message: types.Message):
     await message.answer("Выберите раздел", reply_markup=kb.markupF)
 
 
-@dp.message_handler(TextFilter(equals=kb.inf_about_report), state="*")
+@dp.message_handler(TextFilter(equals=kb.FINANCIAL_STATEMENTS), state="*")
 async def info_about_report(message: types.Message, state: FSMContext):
     await capital_or_report.choice.set()
     await message.answer("Выберите отчёт", reply_markup=kb.markup_of_report)
@@ -98,51 +98,51 @@ async def send_history(message):
     await message.answer(history_of_severstal())
 
 
-@dp.message_handler(TextFilter(equals=kb.the_structure_of_the_company), state="*")
+@dp.message_handler(TextFilter(equals=kb.STRUCTURE_OF_THE_COMPANY), state="*")
 async def send_structure(message: types.Message):
     await message.answer("Выберите раздел", reply_markup=kb.markup_structure)
 
 
-@dp.message_handler(TextFilter(equals=kb.severstal_russian_steel), state="*")
+@dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RUSSIAN_STEEL), state="*")
 async def send_structure(message: types.Message):
     await message.answer(
         ac.severstal_russian_steel, reply_markup=kb.markup_about_company
     )
 
 
-@dp.message_handler(TextFilter(equals=kb.severstal_resource), state="*")
+@dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RESOURCE), state="*")
 async def send_severstal_russian_steel(message: types.Message):
     await message.answer(ac.severstal_resource, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.key_assets), state="*")
+@dp.message_handler(TextFilter(equals=kb.KEY_ASSETS_OF_THE_COMPANY), state="*")
 async def send_key_assets(message: types.Message):
     await message.answer(ac.key_assets, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.trading_companies), state="*")
+@dp.message_handler(TextFilter(equals=kb.TRADING_COMPANIES), state="*")
 async def send_trading_companies(message: types.Message):
     await message.answer(ac.trading_companies, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.further_redistribution_enterprises), state="*")
+@dp.message_handler(TextFilter(equals=kb.FURTHER_REDISTRIBUTION_ENTERPRISES), state="*")
 async def send_further_redistribution_enterprises(message: types.Message):
     await message.answer(
         ac.further_redistribution_enterprises, reply_markup=kb.markup_about_company
     )
 
 
-@dp.message_handler(TextFilter(equals=kb.other_businesses), state="*")
+@dp.message_handler(TextFilter(equals=kb.OTHER_ENTERPRISES), state="*")
 async def send_other_businesses(message: types.Message):
     await message.answer(ac.other_businesses, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.strategy_and_strategic_priorities), state="*")
+@dp.message_handler(TextFilter(equals=kb.STRATEGY_AND_STRATEGIC_PRIORITIES), state="*")
 async def send_strategy(message: types.Message):
     await message.answer(ac.startegy, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.leadership), state="*")
+@dp.message_handler(TextFilter(equals=kb.LEADERSHIP_OF_THE_COMPANY), state="*")
 async def send_leadership(message: types.Message):
     await message.answer(
         "Выберите тип руководства", reply_markup=kb.markup_of_leadership
@@ -150,7 +150,7 @@ async def send_leadership(message: types.Message):
 
 
 @dp.message_handler(
-    TextFilter(equals=kb.management_of_severstal_management_JSC), state="*"
+    TextFilter(equals=kb.DIRECTION_OF_SEVERSTAL_MANAGEMENT), state="*"
 )
 async def send_management_of_severstal_management_JSC(message: types.Message):
     await message.answer(
@@ -158,12 +158,12 @@ async def send_management_of_severstal_management_JSC(message: types.Message):
     )
 
 
-@dp.message_handler(TextFilter(equals=kb.enterprise_management), state="*")
+@dp.message_handler(TextFilter(equals=kb.ENTERPRISE_MANAGEMENT), state="*")
 async def send_enterprise_management(message: types.Message):
     await message.answer(ac.enterprise_management, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.board_members), state='*')
+@dp.message_handler(TextFilter(equals=kb.BOARD_OF_DIRECTORS_MEMBERS), state='*')
 async def send_board_members(message: types.Message):
     await message.answer(ac.board_members, reply_markup=kb.markup_about_company)
 
