@@ -91,7 +91,7 @@ async def send_info_about_campany(message: types.Message):
     await message.answer(ac.SHORT_DESCRIPTION, parse_mode=types.message.ParseMode.MARKDOWN, reply_markup=kb.markup_about_company)
 
 
-@dp.message_handler(TextFilter(equals=kb.BUTTON_SEVERSTAL_HISTORY), state="*")
+@dp.message_handler(TextFilter(equals=kb.HISTORY_OF_THE_COMPANY), state="*")
 async def send_history(message):
     from history import history_of_severstal
 
