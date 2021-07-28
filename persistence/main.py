@@ -151,7 +151,7 @@ async def send_leadership(message: types.Message):
 @dp.message_handler(
     TextFilter(equals=kb.SEVERSTAL_MANAGEMENT_DIRECTION), state="*"
 )
-async def send_management_severstal_management_JSC(message: types.Message):
+async def send_severstal_management_direction(message: types.Message):
     await message.answer(
         ac.SEVERSTAL_MANAGEMENT_DIRECTION, reply_markup=kb.markup_about_company
     )
