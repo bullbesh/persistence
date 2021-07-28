@@ -177,7 +177,7 @@ markup_period = (
     .add(KeyboardButton(YEARLY_REPORT))
 )
 
-markup_about_company = (
+company_markup = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(COMPANY_HISTORY))
     .add(KeyboardButton(COMPANY_STRUCTURE))
