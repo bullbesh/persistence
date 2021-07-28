@@ -10,17 +10,17 @@ NET_PROFIT = "Чистая прибыль"
 FINANCIAL_STATEMENTS = "Финансовая отчётность компании"
 
 ABOUT_COMPANY = "О компании 🏭"
-HISTORY_OF_THE_COMPANY = "История компании"
-STRUCTURE_OF_THE_COMPANY = "Структура компании"
+COMPANY_HISTORY = "История компании"
+COMPANY_STRUCTURE = "Структура компании"
 STRATEGY_AND_STRATEGIC_PRIORITIES = "Стратегия и стратегические приоритеты"
-LEADERSHIP_OF_THE_COMPANY = "Руководство"
-DIRECTION_OF_SEVERSTAL_MANAGEMENT = "Руководство АО «Северсталь Менеджмент»"
+COMPANY_LEADERSHIP = "Руководство"
+SEVERSTAL_MANAGEMENT_DIRECTION = "Руководство АО «Северсталь Менеджмент»"
 ENTERPRISE_MANAGEMENT = "Руководство предприятий"
-BOARD_OF_DIRECTORS_MEMBERS = "Члены совета директоров"
+DIRECTORS_MEMBERS_BOARD = "Члены совета директоров"
 
 SEVERSTAL_RESOURCE = "«Северсталь Ресурс»"
 SEVERSTAL_RUSSIAN_STEEL = "«Северсталь Российская сталь»"
-KEY_ASSETS_OF_THE_COMPANY = "Ключевые активы"
+COMPANY_KEY_ASSETS = "Ключевые активы"
 TRADING_COMPANIES = "Торговые компании"
 FURTHER_REDISTRIBUTION_ENTERPRISES = "Предприятия дальнейшего передела"
 OTHER_ENTERPRISES = "Другие предприятия"
@@ -105,7 +105,7 @@ markupF = (
     .add(KeyboardButton(BUTTON_BACK))
 )
 
-markup_of_report = (
+report_markup = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(TOTAL_COMPANY_INCOME))
     .add(KeyboardButton(SHARE_CAPITAL))
@@ -179,10 +179,10 @@ markup_period = (
 
 markup_about_company = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(HISTORY_OF_THE_COMPANY))
-    .add(KeyboardButton(STRUCTURE_OF_THE_COMPANY))
+    .add(KeyboardButton(COMPANY_HISTORY))
+    .add(KeyboardButton(COMPANY_STRUCTURE))
     .add(KeyboardButton(STRATEGY_AND_STRATEGIC_PRIORITIES))
-    .add(KeyboardButton(LEADERSHIP_OF_THE_COMPANY))
+    .add(KeyboardButton(COMPANY_LEADERSHIP))
     .add(KeyboardButton(BUTTON_BACK))
 )
 
@@ -190,16 +190,16 @@ markup_structure = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(SEVERSTAL_RUSSIAN_STEEL))
     .add(KeyboardButton(SEVERSTAL_RESOURCE))
-    .add(KeyboardButton(KEY_ASSETS_OF_THE_COMPANY))
+    .add(KeyboardButton(COMPANY_KEY_ASSETS))
     .add(KeyboardButton(TRADING_COMPANIES))
     .add(KeyboardButton(FURTHER_REDISTRIBUTION_ENTERPRISES))
     .add(KeyboardButton(OTHER_ENTERPRISES))
 )
 
-markup_of_leadership = (
+leadership_markup = (
     ReplyKeyboardMarkup(resize_keyboard=True)
-    .add(KeyboardButton(BOARD_OF_DIRECTORS_MEMBERS))
-    .add(KeyboardButton(DIRECTION_OF_SEVERSTAL_MANAGEMENT))
+    .add(KeyboardButton(DIRECTORS_MEMBERS_BOARD))
+    .add(KeyboardButton(SEVERSTAL_MANAGEMENT_DIRECTION))
     .add(KeyboardButton(ENTERPRISE_MANAGEMENT))
 
 )
