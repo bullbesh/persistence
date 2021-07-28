@@ -29,7 +29,6 @@ def get_manufacture_vacations():
 		while True:
 			information_about_vacancy = vacation.find_all('div', class_='all-vacancies__table-td-content col-xs-12 col-sm-24')
 			if vacation.find('div', class_='all-vacancies__table-main-sub-title').get_text(strip=True) not in city:
->>>>>>> 9c3c7c5 (Убрал файл с вакансиями, настроил парсинг страниц с вакансиями, добавил таблицу, а также файлик, который её изменяет)
 				break
 			else:
 				town = vacation.find('div', class_='all-vacancies__table-main-sub-title').get_text(strip=True)
