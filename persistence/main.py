@@ -147,7 +147,7 @@ async def send_company_structure(message):
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RUSSIAN_STEEL), state="*")
 async def send_severstal_russian_steel_structure(message):
-    """Северсталь Российская сталь"""
+    """Отправка информации о компании «Северсталь Российская сталь»"""
     await message.answer(
         ac.SEVERSTAL_RUSSIAN_STEEL, reply_markup=kb.company_markup
     )
@@ -155,19 +155,19 @@ async def send_severstal_russian_steel_structure(message):
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RESOURCE), state="*")
 async def send_severstal_russian_steel(message):
-    """Северсталь Ресурс"""
+    """Отправка информации о компании «Северсталь Ресурс»"""
     await message.answer(ac.SEVERSTAL_RESOURCE, reply_markup=kb.company_markup)
 
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_KEY_ASSETS), state="*")
 async def send_key_assets(message):
-    """Ключевые активы компании"""
+    """Отправка информации о ключевых активах компании"""
     await message.answer(ac.COMPANY_KEY_ASSETS, reply_markup=kb.company_markup)
 
 
 @dp.message_handler(TextFilter(equals=kb.TRADING_COMPANIES), state="*")
 async def send_trading_companies(message):
-    """Торговые компании"""
+    """Отправка информации о торговых компаниях"""
     await message.answer(ac.TRADING_COMPANIES, reply_markup=kb.company_markup)
 
 
@@ -175,7 +175,7 @@ async def send_trading_companies(message):
     TextFilter(equals=kb.FURTHER_REDISTRIBUTION_ENTERPRISES), state="*"
 )
 async def send_further_redistribution_enterprises(message):
-    """Предприятия дальнейшего передела"""
+    """Отправка информации о предприятиях дальнейшего передела"""
     await message.answer(
         ac.FURTHER_REDISTRIBUTION_ENTERPRISES, reply_markup=kb.company_markup
     )
@@ -183,7 +183,9 @@ async def send_further_redistribution_enterprises(message):
 
 @dp.message_handler(TextFilter(equals=kb.OTHER_ENTERPRISES), state="*")
 async def send_other_businesses(message):
-    """Предприятия, имеющие какое-либо отношение к Северстали"""
+    """Отправка информации о предприятиях,
+    имеющих какое-либо отношение к Северстали
+    """
     await message.answer(ac.OTHER_ENTERPRISES, reply_markup=kb.company_markup)
 
 
@@ -218,7 +220,7 @@ async def send_leadership(message):
     TextFilter(equals=kb.SEVERSTAL_MANAGEMENT_DIRECTION), state="*"
 )
 async def send_severstal_management_direction(message):
-    """Руководство АО «Северсталь Менеджмент»"""
+    """Отправка информации о руководстве АО «Северсталь Менеджмент»"""
     await message.answer(
         ac.SEVERSTAL_MANAGEMENT_DIRECTION, reply_markup=kb.company_markup
     )
@@ -226,7 +228,7 @@ async def send_severstal_management_direction(message):
 
 @dp.message_handler(TextFilter(equals=kb.ENTERPRISE_MANAGEMENT), state="*")
 async def send_enterprise_management(message):
-    """Руководство других предприятий"""
+    """Отправка информации о руководстве других предприятий"""
     await message.answer(
         ac.ENTERPRISE_MANAGEMENT, reply_markup=kb.company_markup
     )
@@ -234,7 +236,7 @@ async def send_enterprise_management(message):
 
 @dp.message_handler(TextFilter(equals=kb.DIRECTORS_MEMBERS_BOARD), state="*")
 async def send_board_members(message):
-    """Члены совета директоров"""
+    """Отправка информации о членах совета директоров"""
     await message.answer(
         ac.DIRECTORS_MEMBERS_BOARD, reply_markup=kb.company_markup
     )
