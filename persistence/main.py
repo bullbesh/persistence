@@ -1,7 +1,9 @@
 """Основной модуль проекта, объединяющий весь функционал бота
-и выводящий информацию пользователю
-(Финансовые показатели, о компании,
-вакансии и помощь)
+и выводящий информацию пользователю:
+- Финансовые показатели
+- О компании
+- Вакансии
+- Помощь
 """
 
 import logging
@@ -65,8 +67,8 @@ async def send_help(message):
 @dp.message_handler(TextFilter(equals=kb.FINANCIAL_PERFORMANCE), state="*")
 async def send_financial_summary(message):
     """Отправка клавиатуры с следующими функциями:
-    "Узнать стоимость акций компании"
-    "Финансовая отчётность компании"
+    - Узнать стоимость акций компании
+    - Финансовая отчётность компании
     """
     await message.answer("Выберите раздел", reply_markup=kb.finance_markup)
 
@@ -74,9 +76,9 @@ async def send_financial_summary(message):
 @dp.message_handler(TextFilter(equals=kb.FINANCIAL_STATEMENTS), state="*")
 async def send_report_info(message, state):
     """Отправка финансового отчёта компании:
-    "Общий доход компании"
-    "Акционерный капитал"
-    "Чистая прибыль"
+    - Общий доход компании
+    - Акционерный капитал
+    - Чистая прибыль
     """
     await Capitals.choice.set()
     await message.answer("Выберите отчёт", reply_markup=kb.report_markup)
@@ -118,9 +120,11 @@ async def send_stock(message):
 
 @dp.message_handler(TextFilter(equals=kb.ABOUT_COMPANY), state="*")
 async def send_company_info(message):
-    """Информации о Северстали, разбитая на разделы
-    (историю компании, структуру компании,
-    стратегию и стратегические приоритеты, руководство)
+    """Информации о Северстали, разбитая на разделы:
+    - История компании
+    - Структура компании
+    - Стратегия и стратегические приоритеты
+    - Руководство
     """
     await message.answer(
         ac.SHORT_DESCRIPTION,
@@ -187,9 +191,9 @@ async def send_other_businesses(message):
     TextFilter(equals=kb.STRATEGY_AND_STRATEGIC_PRIORITIES), state="*"
 )
 async def send_strategy(message):
-    """Отправка стратегии и стратегических приоритетов компании
-    (стратегия устойчивого развития,
-    стратегические приоритеты «Северстали»)
+    """Отправка стратегии и стратегических приоритетов компании:
+    - Стратегия устойчивого развития
+    - Стратегические приоритеты «Северстали»
     """
     await message.answer(
         ac.COMPANY_STARTEGY,
@@ -200,10 +204,10 @@ async def send_strategy(message):
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_LEADERSHIP), state="*")
 async def send_leadership(message):
-    """Отправка руководства предприятий, поделенного на три раздела
-    (члены совета директоров,
-    руководство АО «Северсталь Менеджмент»,
-    руководство предприятий)
+    """Отправка руководства предприятий, поделенного на три раздела:
+    - Члены совета директоров
+    - Руководство АО «Северсталь Менеджмент»
+    - Руководство предприятий
     """
     await message.answer(
         "Выберите тип руководства", reply_markup=kb.leadership_markup
@@ -239,9 +243,11 @@ async def send_board_members(message):
 @dp.message_handler(TextFilter(equals=kb.BUTTON_VACANCIES), state="*")
 async def send_direction(message):
     """Информации о доступных на Северстали
-    вакансиях, разбитая на разделы
-    (Произоводство, IT & Digital,
-    офис, информация молодым специалистам)
+    вакансиях, разбитая на разделы:
+    - Произоводство
+    - IT & Digital
+    - Офис
+    - Информация молодым специалистам)
     """
     await Vacancies.vacation.set()
     await message.answer("Выберите направление", reply_markup=kb.markup2)
