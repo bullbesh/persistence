@@ -120,7 +120,7 @@ async def send_stock(message):
 
 @dp.message_handler(TextFilter(equals=kb.ABOUT_COMPANY), state="*")
 async def send_company_info(message):
-    """Информации о Северстали, разбитая на разделы:
+    """Отправка информации о Северстали, разбитой на разделы:
     - История компании
     - Структура компании
     - Стратегия и стратегические приоритеты
@@ -244,8 +244,8 @@ async def send_board_members(message):
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_VACANCIES), state="*")
 async def send_direction(message):
-    """Информации о доступных на Северстали
-    вакансиях, разбитая на разделы:
+    """Отправка информации о доступных на Северстали
+    вакансиях, разбитой на разделы:
     - Произоводство
     - IT & Digital
     - Офис
@@ -261,7 +261,7 @@ async def send_direction(message):
     state=Vacancies.vacation,
 )
 async def send_vacation(message, state):
-    """Выбор конкретного раздела с вакансиями и выбор города,
+    """Отправка выбора конкретного раздела с вакансиями и выбор города,
     в котором данное направление профдеятельности существует
     """
     async with state.proxy() as data:
