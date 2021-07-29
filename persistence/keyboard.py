@@ -29,7 +29,7 @@ TRADING_COMPANIES = "Торговые компании"
 FURTHER_REDISTRIBUTION_ENTERPRISES = "Предприятия дальнейшего передела"
 OTHER_ENTERPRISES = "Другие предприятия"
 
-"""Города для поиска вакансий"""
+
 CHEREPOVETS = "Череповец"
 MOSCOW = "Москва"
 SAINT_PETERSBURG = "Санкт-Петербург"
