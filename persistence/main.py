@@ -1,7 +1,7 @@
 """Основной модуль проекта, объединяющий весь функционал бота
 и выводящий информацию пользователю
-
-(...)
+(Финансовые показатели, о компании,
+вакансии и помощь)
 """
 
 import logging
@@ -9,7 +9,6 @@ import os
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Text as TextFilter
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.utils.markdown import bold
@@ -137,13 +136,13 @@ async def send_history(message):
 
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_STRUCTURE), state="*")
-async def send_structure(message):
+async def send_company_structure(message):
     """Отправка описания структуры компании"""
     await message.answer("Выберите раздел", reply_markup=kb.markup_structure)
 
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RUSSIAN_STEEL), state="*")
-async def send_structure(message):
+async def send_severstal_russian_steel_structure(message):
     """Северсталь Российская сталь"""
     await message.answer(
         ac.SEVERSTAL_RUSSIAN_STEEL, reply_markup=kb.company_markup
@@ -253,7 +252,7 @@ async def send_direction(message):
     in ["Производство", "IT & Digital", "Офис", "Молодым специалистам"],
     state=Vacancies.vacation,
 )
-async def send_vacationM(message, state):
+async def send_vacation(message, state):
     """Выбор конкретного раздела с вакансиями и выбор города,
     в котором данное направление профдеятельности существует
     """
