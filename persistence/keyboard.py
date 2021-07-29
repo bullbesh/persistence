@@ -95,7 +95,7 @@ BUTTON_BACK = "Назад"
 BUTTON_MORE1 = "Ещё"
 BUTTON_MORE2 = "Больше"
 
-"""Клавиатуры (...)"""
+
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(FINANCIAL_PERFORMANCE))
