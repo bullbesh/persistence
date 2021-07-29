@@ -290,8 +290,10 @@ async def go_back(message):
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_HELP), state="*")
 async def send_support(message, state="*"):
-    """Отправка помощи пользователю, а именно объяснение
-    принципа работы бота и краткое описание его функций
+    """Отправка помощи пользователю
+
+    Отправляется объяснение принципа работы бота
+    и краткое описание его функций
     """
     await message.answer(
         BOT_SUPPORT,
