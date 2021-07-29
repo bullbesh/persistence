@@ -276,7 +276,7 @@ async def send_vacation(message, state):
     lambda message: message.text in kb.CITIES_LIST, state=Vacancies.city
 )
 async def send_vactions(message, state):
-    """(...)"""
+    """Отправка вакансий по выбранным критериям - городу и направлению"""
     async with state.proxy() as data:
         data["city"] = message.text
     await message.answer(
