@@ -55,9 +55,7 @@ class Capitals(StatesGroup):
 
 @dp.message_handler(commands=["start"], state="*")
 async def send_welcome(message):
-    """Отправка краткого описания бота
-    при вводе команды /start
-    """
+    """Отправка краткого описания бота"""
     await message.answer(
         "Бот, предоставяющий информацию о предприятии Северсталь.\n\n"
         "Для ознакомления с функциями "
