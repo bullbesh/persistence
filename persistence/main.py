@@ -32,7 +32,7 @@ dp = Dispatcher(bot, storage=storage)
 
 
 class Vacancies(StatesGroup):
-    """Состояние пользователя при ознакомлении с вакансиями предприятия
+    """Состояние пользователя при ознакомлении с вакансиями предприятия.
 
     Пользователь выбирает направление вакансии, а потом город,
     после чего получает вакансии по данным критериям
@@ -43,7 +43,7 @@ class Vacancies(StatesGroup):
 
 
 class Capitals(StatesGroup):
-    """Состояние пользователя при ознакомлении с финансовой отчётностью компании
+    """Состояние пользователя при ознакомлении с финансовой отчётностью компании.
 
     Пользователь может выбрать один из типов отчёта компании.
     После выбора типа отчёта нужно указать временной период
@@ -55,7 +55,7 @@ class Capitals(StatesGroup):
 
 @dp.message_handler(commands=["start"], state="*")
 async def send_welcome(message):
-    """Отправка краткого описания бота"""
+    """Отправка краткого описания бота."""
     await message.answer(
         "Бот, предоставяющий информацию о предприятии Северсталь.\n\n"
         "Для ознакомления с функциями нажмите на кнопку 'Помощь'",
@@ -65,7 +65,7 @@ async def send_welcome(message):
 
 @dp.message_handler(commands=["help"], state="*")
 async def send_help(message):
-    """Отправка помощи пользователю"""
+    """Отправка помощи пользователю."""
     await message.answer("Sorry")
 
 
@@ -95,7 +95,7 @@ async def send_report_info(message, state):
     state=Capitals.choice,
 )
 async def send_period(message, state):
-    """Отправка выбора между квартальным и годовым отчётами"""
+    """Отправка выбора между квартальным и годовым отчётами."""
     async with state.proxy() as data:
         data["choice"] = message.text
     await Capitals.next()
@@ -108,7 +108,7 @@ async def send_period(message, state):
 )
 async def send_report(message, state):
     """Отправка выбора между финансовой отчётностью
-    компании и стоимостью акций
+    компании и стоимостью акций.
     """
     async with state.proxy() as data:
         data["period"] = message.text
@@ -119,7 +119,7 @@ async def send_report(message, state):
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_STOCK_PRICE), state="*")
 async def send_stock(message):
-    """Отправка стоимости акций Северстали"""
+    """Отправка стоимости акций Северстали."""
     await message.answer(stocks())
 
 
@@ -140,19 +140,19 @@ async def send_company_info(message):
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_HISTORY), state="*")
 async def send_history(message):
-    """Отправка истории компании"""
+    """Отправка истории компании."""
     await message.answer(severstal_history())
 
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_STRUCTURE), state="*")
 async def send_company_structure(message):
-    """Отправка описания структуры компании"""
+    """Отправка описания структуры компании."""
     await message.answer("Выберите раздел", reply_markup=kb.markup_structure)
 
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RUSSIAN_STEEL), state="*")
 async def send_severstal_russian_steel_structure(message):
-    """Отправка информации о компании «Северсталь Российская сталь»"""
+    """Отправка информации о компании «Северсталь Российская сталь»."""
     await message.answer(
         ac.SEVERSTAL_RUSSIAN_STEEL, reply_markup=kb.company_markup
     )
@@ -160,19 +160,19 @@ async def send_severstal_russian_steel_structure(message):
 
 @dp.message_handler(TextFilter(equals=kb.SEVERSTAL_RESOURCE), state="*")
 async def send_severstal_russian_steel(message):
-    """Отправка информации о компании «Северсталь Ресурс»"""
+    """Отправка информации о компании «Северсталь Ресурс»."""
     await message.answer(ac.SEVERSTAL_RESOURCE, reply_markup=kb.company_markup)
 
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_KEY_ASSETS), state="*")
 async def send_key_assets(message):
-    """Отправка информации о ключевых активах компании"""
+    """Отправка информации о ключевых активах компании."""
     await message.answer(ac.COMPANY_KEY_ASSETS, reply_markup=kb.company_markup)
 
 
 @dp.message_handler(TextFilter(equals=kb.TRADING_COMPANIES), state="*")
 async def send_trading_companies(message):
-    """Отправка информации о торговых компаниях"""
+    """Отправка информации о торговых компаниях."""
     await message.answer(ac.TRADING_COMPANIES, reply_markup=kb.company_markup)
 
 
@@ -180,7 +180,7 @@ async def send_trading_companies(message):
     TextFilter(equals=kb.FURTHER_REDISTRIBUTION_ENTERPRISES), state="*"
 )
 async def send_further_redistribution_enterprises(message):
-    """Отправка информации о предприятиях дальнейшего передела"""
+    """Отправка информации о предприятиях дальнейшего передела."""
     await message.answer(
         ac.FURTHER_REDISTRIBUTION_ENTERPRISES, reply_markup=kb.company_markup
     )
@@ -189,7 +189,7 @@ async def send_further_redistribution_enterprises(message):
 @dp.message_handler(TextFilter(equals=kb.OTHER_ENTERPRISES), state="*")
 async def send_other_businesses(message):
     """Отправка информации о предприятиях,
-    имеющих какое-либо отношение к Северстали
+    имеющих какое-либо отношение к Северстали.
     """
     await message.answer(ac.OTHER_ENTERPRISES, reply_markup=kb.company_markup)
 
@@ -225,7 +225,7 @@ async def send_leadership(message):
     TextFilter(equals=kb.SEVERSTAL_MANAGEMENT_DIRECTION), state="*"
 )
 async def send_severstal_management_direction(message):
-    """Отправка информации о руководстве АО «Северсталь Менеджмент»"""
+    """Отправка информации о руководстве АО «Северсталь Менеджмент»."""
     await message.answer(
         ac.SEVERSTAL_MANAGEMENT_DIRECTION, reply_markup=kb.company_markup
     )
@@ -233,7 +233,7 @@ async def send_severstal_management_direction(message):
 
 @dp.message_handler(TextFilter(equals=kb.ENTERPRISE_MANAGEMENT), state="*")
 async def send_enterprise_management(message):
-    """Отправка информации о руководстве других предприятий"""
+    """Отправка информации о руководстве других предприятий."""
     await message.answer(
         ac.ENTERPRISE_MANAGEMENT, reply_markup=kb.company_markup
     )
@@ -241,7 +241,7 @@ async def send_enterprise_management(message):
 
 @dp.message_handler(TextFilter(equals=kb.DIRECTORS_MEMBERS_BOARD), state="*")
 async def send_board_members(message):
-    """Отправка информации о членах совета директоров"""
+    """Отправка информации о членах совета директоров."""
     await message.answer(
         ac.DIRECTORS_MEMBERS_BOARD, reply_markup=kb.company_markup
     )
@@ -267,7 +267,7 @@ async def send_direction(message):
 )
 async def send_vacation(message, state):
     """Отправка выбора конкретного раздела с вакансиями и выбор города,
-    в котором данное направление профдеятельности существует
+    в котором данное направление профдеятельности существует.
     """
     async with state.proxy() as data:
         data["vacation"] = message.text
@@ -281,7 +281,7 @@ async def send_vacation(message, state):
     lambda message: message.text in kb.CITIES_LIST, state=Vacancies.city
 )
 async def send_vactions(message, state):
-    """Отправка вакансий по выбранным критериям - городу и направлению"""
+    """Отправка вакансий по выбранным критериям - городу и направлению."""
     async with state.proxy() as data:
         data["city"] = message.text
     await message.answer(
@@ -291,13 +291,13 @@ async def send_vactions(message, state):
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_BACK), state="*")
 async def go_back(message):
-    """Отправка пользователя на ступень назад"""
+    """Отправка пользователя на ступень назад."""
     await message.answer("Хорошо", reply_markup=kb.markup1)
 
 
 @dp.message_handler(TextFilter(equals=kb.BUTTON_HELP), state="*")
 async def send_support(message, state="*"):
-    """Отправка помощи пользователю
+    """Отправка помощи пользователю.
 
     Отправляется объяснение принципа работы бота
     и краткое описание его функций
@@ -311,7 +311,7 @@ async def send_support(message, state="*"):
 
 @dp.message_handler()
 async def send_error(message, state="*"):
-    """Обработка нераспознанного сообщения
+    """Обработка нераспознанного сообщения.
 
     В случае ввода пользователем сообщения,
     которое бот не сможет распознать, отправляется просьба
@@ -324,5 +324,5 @@ async def send_error(message, state="*"):
 
 
 def main():
-    """Основная функция, отвечающая за запуск бота"""
+    """Основная функция, отвечающая за запуск бота."""
     executor.start_polling(dp, skip_updates=True)
