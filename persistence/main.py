@@ -254,7 +254,7 @@ async def send_direction(message):
     - Произоводство
     - IT & Digital
     - Офис
-    - Информация молодым специалистам)
+    - Информация молодым специалистам
     """
     await Vacancies.vacation.set()
     await message.answer("Выберите направление", reply_markup=kb.markup2)
