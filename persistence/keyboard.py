@@ -5,7 +5,7 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
 
-FINANCIAL_PERFORMANCE = "Финансовые показатели 📈"
+FINANCIAL_PERFORMANCE = "Финансовые показатели \N{chart with upwards trend}"
 QUARTELY_REPORT = "Квартальный отчёт"
 YEARLY_REPORT = "Годовой отчёт"
 TOTAL_COMPANY_INCOME = "Общий доход компании"
@@ -13,7 +13,7 @@ SHARE_CAPITAL = "Акционерный капитал"
 NET_PROFIT = "Чистая прибыль"
 FINANCIAL_STATEMENTS = "Финансовая отчётность компании"
 
-ABOUT_COMPANY = "О компании 🏭"
+ABOUT_COMPANY = "О компании \N{factory}"
 COMPANY_HISTORY = "История компании"
 COMPANY_STRUCTURE = "Структура компании"
 STRATEGY_AND_STRATEGIC_PRIORITIES = "Стратегия и стратегические приоритеты"
@@ -83,8 +83,8 @@ CITIES = [
 ]
 
 BUTTON_STOCK_PRICE = "Узнать стоимость акций Северстали"
-BUTTON_HELP = "Помощь ⚙️"
-BUTTON_VACANCIES = "Вакансии 👨‍💼"
+BUTTON_HELP = "Помощь \N{gear}"
+BUTTON_VACANCIES = "Вакансии \N{man}"
 
 COMPANY_MANUFACTURE = "Производство"
 COMPANY_IT_AND_DIGITAL = "IT & Digital"
