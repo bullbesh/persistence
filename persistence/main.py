@@ -278,7 +278,7 @@ async def send_vacation(message, state):
 
 
 @dp.message_handler(
-    lambda message: message.text in kb.CITIES_LIST, state=Vacancies.city
+    lambda message: message.text in kb.CITIES, state=Vacancies.city
 )
 async def send_vactions(message, state):
     """Отправка вакансий по выбранным критериям - городу и направлению."""
