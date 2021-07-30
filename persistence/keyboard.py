@@ -1,4 +1,8 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+"""Модуль, содержащий в себе константы и клавиатуры, выводящиеся ботом через
+файл main.py
+"""
+
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
 
 FINANCIAL_PERFORMANCE = "Финансовые показатели 📈"
@@ -24,6 +28,7 @@ COMPANY_KEY_ASSETS = "Ключевые активы"
 TRADING_COMPANIES = "Торговые компании"
 FURTHER_REDISTRIBUTION_ENTERPRISES = "Предприятия дальнейшего передела"
 OTHER_ENTERPRISES = "Другие предприятия"
+
 
 CHEREPOVETS = "Череповец"
 MOSCOW = "Москва"
@@ -90,6 +95,7 @@ BUTTON_BACK = "Назад"
 BUTTON_MORE1 = "Ещё"
 BUTTON_MORE2 = "Больше"
 
+
 markup1 = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(FINANCIAL_PERFORMANCE))
@@ -98,7 +104,7 @@ markup1 = (
     .add(KeyboardButton(BUTTON_HELP))
 )
 
-markupF = (
+finance_markup = (
     ReplyKeyboardMarkup(resize_keyboard=True)
     .add(KeyboardButton(BUTTON_STOCK_PRICE))
     .add(KeyboardButton(FINANCIAL_STATEMENTS))
@@ -131,14 +137,26 @@ markup3 = (
         KeyboardButton(BELGOROD),
         KeyboardButton(YAKOVLEVO),
     )
-    .row(KeyboardButton(KOSTOMUKSHA), KeyboardButton(SHEKSNA), KeyboardButton(STROITEL))
+    .row(
+        KeyboardButton(KOSTOMUKSHA),
+        KeyboardButton(SHEKSNA),
+        KeyboardButton(STROITEL),
+    )
 )
 
 markup4 = (
     ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .row(KeyboardButton(KOLPINO), KeyboardButton(MOSCOW), KeyboardButton(BELGOROD))
+    .row(
+        KeyboardButton(KOLPINO),
+        KeyboardButton(MOSCOW),
+        KeyboardButton(BELGOROD),
+    )
     .row(KeyboardButton(SAINT_PETERSBURG), KeyboardButton(KOSTOMUKSHA))
-    .row(KeyboardButton(CHEREPOVETS), KeyboardButton(VORONEJ), KeyboardButton(YAROSLAVL))
+    .row(
+        KeyboardButton(CHEREPOVETS),
+        KeyboardButton(VORONEJ),
+        KeyboardButton(YAROSLAVL),
+    )
 )
 
 markup5 = (
@@ -201,7 +219,6 @@ leadership_markup = (
     .add(KeyboardButton(DIRECTORS_MEMBERS_BOARD))
     .add(KeyboardButton(SEVERSTAL_MANAGEMENT_DIRECTION))
     .add(KeyboardButton(ENTERPRISE_MANAGEMENT))
-
 )
 
 keyboards = {
