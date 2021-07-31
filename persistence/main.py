@@ -63,12 +63,6 @@ async def send_welcome(message):
     )
 
 
-@dp.message_handler(commands=["help"], state="*")
-async def send_help(message):
-    """Отправка помощи пользователю."""
-    await message.answer("Sorry")
-
-
 @dp.message_handler(TextFilter(equals=kb.FINANCIAL_PERFORMANCE), state="*")
 async def send_financial_summary(message):
     """Отправка клавиатуры с следующими функциями:
