@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
+
 CITIES = [
     "Череповец",
     "Ярославль",
@@ -18,7 +19,7 @@ CITIES = [
 ]
 
 
-def get_vacations(html):
+def get_vacations(link):
     """Получение вакансий по переданной ссылке.
 
     Эта функция запрашивает код у страницы по переданной ссылке,
@@ -26,16 +27,16 @@ def get_vacations(html):
     на выходе выдаёт список словарей с вакансиями.
     """
     driver = webdriver.Chrome()
-    driver.get(html)
+    driver.get(link)
     soup = BeautifulSoup(driver.page_source, "lxml")
     driver.quit()
     vacations = soup.find_all("a", class_="all-vacancies__table-tr")
     vacancies = []
     for vacation in vacations:
-        city = vacation.find(
+        vacancy_city = vacation.find(
             "div", class_="all-vacancies__table-main-sub-title"
         ).get_text(strip=True)
-        information_vacancy = vacation.find_all(
+        vacancy_information = vacation.find_all(
             "div",
             class_="all-vacancies__table-td-content",
         )
@@ -44,16 +45,12 @@ def get_vacations(html):
             vacancy_work_experience,
             vacancy_employment,
             vacancy_schedule,
-            salary,
-        ) = (i.get_text(strip=True) for i in information_vacancy)
-        if city not in CITIES:
+            vacancy_salary,
+        ) = (i.get_text(strip=True) for i in vacancy_information)
+        if vacancy_city not in CITIES:
             continue
-        else:
-            vacancy_city = city
-        if salary == "":
+        if vacancy_salary == "":
             vacancy_salary = "Не указано"
-        else:
-            vacancy_salary = salary
         vacancies.append(
             {
                 "vacancy_description": vacation.find(
