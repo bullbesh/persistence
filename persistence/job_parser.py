@@ -118,6 +118,3 @@ def office_vacations():
         "4%D0%B8%D1%81"
     )
     return get_vacations(link)
-
-
-print(office_vacations())
