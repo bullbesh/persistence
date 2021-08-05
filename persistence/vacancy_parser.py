@@ -31,7 +31,7 @@ vacancies = []
 
 @dataclass
 class Vacancy:
-    """Класс для упорядочивания информации о вакансиях"""
+    """Класс для упорядочивания информации о вакансиях."""
 
     vacancy_direction: str
     vacancy_description: str
