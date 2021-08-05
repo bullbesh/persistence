@@ -1,21 +1,17 @@
 """Модуль для получения вакансий."""
+from dataclasses import dataclass
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 
-LINK = "https://career.severstal.com/vacancies/?direction="
-DIRECTIONS_LINK = [
-    "производство",
-    "IT+%26+Digital",
-    "офис",
-    "молодой+специалист",
-]
-DIRECTIONS = [
-    "Производство",
-    "IT & Digital",
-    "Офис",
-    "Молодым специалистам",
-]
+URL_PATTERN = "https://career.severstal.com/vacancies/?direction={direction}"
+DIRECTIONS_LINK = {
+    "производство": "Производство",
+    "IT+%26+Digital": "IT & Digital",
+    "офис": "Офис",
+    "молодой+специалист": "Молодым специалистам",
+}
 CITIES = [
     "Череповец",
     "Ярославль",
@@ -30,9 +26,24 @@ CITIES = [
     "Новосибирск",
     "Казань",
 ]
+vacancies = []
 
 
-def get_content(link):
+@dataclass
+class Vacancy:
+    """Класс для упорядочивания информации о вакансиях"""
+
+    vacancy_direction: str
+    vacancy_description: str
+    vacancy_city: str
+    vacancy_date_publication: str
+    vacancy_work_experience: str
+    vacancy_employment: str
+    vacancy_schedule: str
+    vacancy_salary: str
+
+
+def get_content(link, vacancy_direction):
     """Получение вакансий по переданной ссылке.
 
     Эта функция запрашивает код у страницы по переданной ссылке,
@@ -44,7 +55,6 @@ def get_content(link):
     soup = BeautifulSoup(driver.page_source, "lxml")
     driver.quit()
     vacations = soup.find_all("a", class_="all-vacancies__table-tr")
-    vacancies = []
     for vacation in vacations:
         vacancy_description = vacation.find(
             "div", class_="all-vacancies__table-main-title"
@@ -68,17 +78,17 @@ def get_content(link):
         if vacancy_salary == "":
             vacancy_salary = "Не указано"
         vacancies.append(
-            {
-                "vacancy_description": vacancy_description,
-                "vacancy_city": vacancy_city,
-                "vacancy_date_publication": vacancy_date_publication,
-                "vacancy_work_experience": vacancy_work_experience,
-                "vacancy_employment": vacancy_employment,
-                "vacancy_schedule": vacancy_schedule,
-                "vacancy_salary": vacancy_salary,
-            }
+            Vacancy(
+                vacancy_direction=vacancy_direction,
+                vacancy_description=vacancy_description,
+                vacancy_city=vacancy_city,
+                vacancy_date_publication=vacancy_date_publication,
+                vacancy_work_experience=vacancy_work_experience,
+                vacancy_employment=vacancy_employment,
+                vacancy_schedule=vacancy_schedule,
+                vacancy_salary=vacancy_salary,
+            )
         )
-    return vacancies
 
 
 def get_vacancies():
@@ -88,7 +98,8 @@ def get_vacancies():
     и возвращает словарь со списками вакансий,
     где ключами являются названия направлений.
     """
-    vacancies = {}
-    for i in range(len(DIRECTIONS_LINK)):
-        vacancies[DIRECTIONS[i]] = get_content(LINK + DIRECTIONS_LINK[i])
+    for direction in DIRECTIONS_LINK.keys():
+        get_content(
+            URL_PATTERN.format(direction=direction), DIRECTIONS_LINK[direction]
+        )
     return vacancies

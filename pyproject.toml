@@ -12,6 +12,9 @@ readme = "README.md"
 python = "^3.8"
 aiogram = "^2.14.3"
 investpy = "^1.0.7"
+selenium = "^3.141.0"
+setuptools = "^57.4.0"
+beautifulsoup4 = "^4.9.3"
 
 [tool.poetry.dev-dependencies]
 # pre-commit
