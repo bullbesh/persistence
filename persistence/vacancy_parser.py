@@ -98,7 +98,7 @@ def _get_vacancy_from_page_element(page_element, vacancy_direction):
     vacancy_city = page_element.find(
         "div", class_="all-vacancies__table-main-sub-title"
     ).get_text(strip=True)
-    vacancy_information = page_element.find_all(
+    vacancy_element_fields = page_element.find_all(
         "div",
         class_="all-vacancies__table-td-content",
     )
@@ -108,7 +108,10 @@ def _get_vacancy_from_page_element(page_element, vacancy_direction):
         vacancy_employment,
         vacancy_schedule,
         vacancy_salary,
-    ) = (i.get_text(strip=True) for i in vacancy_information)
+    ) = (
+        vacancy_element_field.get_text(strip=True)
+        for vacancy_element_field in vacancy_element_fields
+    )
 
     return Vacancy(
         direction=vacancy_direction,
