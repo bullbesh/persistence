@@ -42,6 +42,18 @@ class Vacancy:
     salary: str
 
 
+def get_vacancies():
+    """Получение вакансий всех направлений."""
+    vacancies = []
+    for direction in DIRECTIONS_LINK.keys():
+        direction_vacancies = get_content(
+            URL_PATTERN.format(direction=direction), DIRECTIONS_LINK[direction]
+        )
+        vacancies.extend(direction_vacancies)
+
+    return vacancies
+
+
 def get_content(link, vacancy_direction):
     """Получение вакансий конкретного направления по переданной ссылке."""
     page_content = _get_page_content(link)
@@ -108,15 +120,3 @@ def _get_vacancy_from_page_element(page_element, vacancy_direction):
         schedule=vacancy_schedule,
         salary=vacancy_salary,
     )
-
-
-def get_vacancies():
-    """Получение вакансий всех направлений."""
-    vacancies = []
-    for direction in DIRECTIONS_LINK.keys():
-        direction_vacancies = get_content(
-            URL_PATTERN.format(direction=direction), DIRECTIONS_LINK[direction]
-        )
-        vacancies.extend(direction_vacancies)
-
-    return vacancies
