@@ -26,7 +26,6 @@ CITIES = [
     "Новосибирск",
     "Казань",
 ]
-vacancies = []
 
 
 @dataclass
@@ -54,6 +53,7 @@ def get_content(link, vacancy_direction):
     driver.get(link)
     soup = BeautifulSoup(driver.page_source, "lxml")
     driver.quit()
+    vacancies = []
     vacations = soup.find_all("a", class_="all-vacancies__table-tr")
     for vacation in vacations:
         vacancy_description = vacation.find(
@@ -90,6 +90,8 @@ def get_content(link, vacancy_direction):
             )
         )
 
+    return vacancies
+
 
 def get_vacancies():
     """Функция для получения вакансий по всем направлениям.
@@ -98,8 +100,11 @@ def get_vacancies():
     и возвращает словарь со списками вакансий,
     где ключами являются названия направлений.
     """
+    vacancies = []
     for direction in DIRECTIONS_LINK.keys():
-        get_content(
+        direction_vacancies = get_content(
             URL_PATTERN.format(direction=direction), DIRECTIONS_LINK[direction]
         )
+        vacancies.extend(direction_vacancies)
+
     return vacancies
