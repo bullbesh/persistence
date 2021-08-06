@@ -45,18 +45,19 @@ class Vacancy:
 def get_vacancies():
     """Получение вакансий всех направлений."""
     vacancies = []
-    for direction, direction_url_part in VACANCIES_DIRECTIONS.items():
-        url = URL_PATTERN.format(direction=direction_url_part)
-        direction_vacancies = get_content(url, direction)
+    for direction in VACANCIES_DIRECTIONS:
+        direction_vacancies = _get_direction_vacancies(direction)
         vacancies.extend(direction_vacancies)
 
     return vacancies
 
 
-def get_content(link, vacancy_direction):
-    """Получение вакансий конкретного направления по переданной ссылке."""
-    page_content = _get_page_content(link)
+def _get_direction_vacancies(vacancy_direction):
+    """Получение вакансий конкретного направления."""
+    url = URL_PATTERN.format(direction=VACANCIES_DIRECTIONS[vacancy_direction])
+    page_content = _get_page_content(url)
     vacancies_page_elements = _get_vacancies_page_elements(page_content)
+
     vacancies = []
     for vacancy_page_element in vacancies_page_elements:
         vacancy = _get_vacancy_from_page_element(
