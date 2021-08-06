@@ -32,9 +32,9 @@ ALLOWED_VACANCY_CITIES = {
 class Vacancy:
     """Модель вакансии с сайта Северстали."""
 
+    direction: str
     description: str
     city: str
-    direction: str
     date_publication: str
     work_experience: str
     employment: str
