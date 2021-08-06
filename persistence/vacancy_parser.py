@@ -12,7 +12,7 @@ DIRECTIONS_LINK = {
     "офис": "Офис",
     "молодой+специалист": "Молодым специалистам",
 }
-CITIES = [
+ALLOWED_VACANCY_CITIES = {
     "Череповец",
     "Ярославль",
     "Москва",
@@ -25,7 +25,7 @@ CITIES = [
     "Санкт-Петербург",
     "Новосибирск",
     "Казань",
-]
+}
 
 
 @dataclass
@@ -51,7 +51,7 @@ def get_content(link, vacancy_direction):
         vacancy = _get_vacancy_from_page_element(
             vacancy_page_element, vacancy_direction
         )
-        if vacancy.city not in CITIES:
+        if vacancy.city not in ALLOWED_VACANCY_CITIES:
             continue
 
         if not vacancy.salary:
