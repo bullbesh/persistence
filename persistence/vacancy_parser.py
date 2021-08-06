@@ -6,11 +6,11 @@ from selenium import webdriver
 
 
 URL_PATTERN = "https://career.severstal.com/vacancies/?direction={direction}"
-DIRECTIONS_LINK = {
-    "производство": "Производство",
-    "IT+%26+Digital": "IT & Digital",
-    "офис": "Офис",
-    "молодой+специалист": "Молодым специалистам",
+VACANCIES_DIRECTIONS = {
+    "Производство": "производство",
+    "IT & Digital": "IT+%26+Digital",
+    "Офис": "офис",
+    "Молодым специалистам": "молодой+специалист",
 }
 ALLOWED_VACANCY_CITIES = {
     "Череповец",
@@ -45,10 +45,9 @@ class Vacancy:
 def get_vacancies():
     """Получение вакансий всех направлений."""
     vacancies = []
-    for direction in DIRECTIONS_LINK.keys():
-        direction_vacancies = get_content(
-            URL_PATTERN.format(direction=direction), DIRECTIONS_LINK[direction]
-        )
+    for direction, direction_url_part in VACANCIES_DIRECTIONS.items():
+        url = URL_PATTERN.format(direction=direction_url_part)
+        direction_vacancies = get_content(url, direction)
         vacancies.extend(direction_vacancies)
 
     return vacancies
