@@ -32,14 +32,14 @@ CITIES = [
 class Vacancy:
     """Модель вакансии с сайта Северстали."""
 
-    vacancy_direction: str
-    vacancy_description: str
-    vacancy_city: str
-    vacancy_date_publication: str
-    vacancy_work_experience: str
-    vacancy_employment: str
-    vacancy_schedule: str
-    vacancy_salary: str
+    description: str
+    city: str
+    direction: str
+    date_publication: str
+    work_experience: str
+    employment: str
+    schedule: str
+    salary: str
 
 
 def get_content(link, vacancy_direction):
@@ -99,14 +99,14 @@ def _get_vacancy_from_page_element(page_element, vacancy_direction):
     ) = (i.get_text(strip=True) for i in vacancy_information)
 
     return Vacancy(
-        vacancy_direction=vacancy_direction,
-        vacancy_description=vacancy_description,
-        vacancy_city=vacancy_city,
-        vacancy_date_publication=vacancy_date_publication,
-        vacancy_work_experience=vacancy_work_experience,
-        vacancy_employment=vacancy_employment,
-        vacancy_schedule=vacancy_schedule,
-        vacancy_salary=vacancy_salary,
+        direction=vacancy_direction,
+        description=vacancy_description,
+        city=vacancy_city,
+        date_publication=vacancy_date_publication,
+        work_experience=vacancy_work_experience,
+        employment=vacancy_employment,
+        schedule=vacancy_schedule,
+        salary=vacancy_salary,
     )
 
 
