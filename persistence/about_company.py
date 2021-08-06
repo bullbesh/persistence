@@ -47,7 +47,7 @@ COMPANY_KEY_ASSETS = (
     "Яковлевский ГОК"
 )
 
-TRADING_COMPANIES = "Северсталь Дистрибуция\n\n" "Северсталь Экспорт"
+TRADING_COMPANIES = "Северсталь Дистрибуция\n\nСеверсталь Экспорт"
 
 FURTHER_REDISTRIBUTION_ENTERPRISES = (
     "Северсталь СМЦ-Колпино\n\n"
