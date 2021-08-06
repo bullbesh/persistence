@@ -1,4 +1,4 @@
-"""Модуль для получения вакансий."""
+"""Модуль для получения вакансий с сайта Северстали."""
 from dataclasses import dataclass
 
 from bs4 import BeautifulSoup
@@ -30,7 +30,7 @@ CITIES = [
 
 @dataclass
 class Vacancy:
-    """Класс для упорядочивания информации о вакансиях."""
+    """Модель вакансии с сайта Северстали."""
 
     vacancy_direction: str
     vacancy_description: str
@@ -43,12 +43,7 @@ class Vacancy:
 
 
 def get_content(link, vacancy_direction):
-    """Получение вакансий по переданной ссылке.
-
-    Эта функция запрашивает код у страницы по переданной ссылке,
-    обрабатывает её,
-    на выходе выдаёт список словарей с вакансиями.
-    """
+    """Получение вакансий конкретного направления по переданной ссылке."""
     driver = webdriver.Chrome()
     driver.get(link)
     soup = BeautifulSoup(driver.page_source, "lxml")
@@ -94,12 +89,7 @@ def get_content(link, vacancy_direction):
 
 
 def get_vacancies():
-    """Функция для получения вакансий по всем направлениям.
-
-    Данная функция через цикл передаёт ссылки функции get_content()
-    и возвращает словарь со списками вакансий,
-    где ключами являются названия направлений.
-    """
+    """Получение вакансий всех направлений."""
     vacancies = []
     for direction in DIRECTIONS_LINK.keys():
         direction_vacancies = get_content(
