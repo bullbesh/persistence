@@ -17,7 +17,7 @@ from aiogram.utils.markdown import bold
 
 from . import about_company as ac
 from . import keyboard as kb
-from .history import severstal_history
+from .history import SEVERSTAL_HISTORY
 from .reports import report
 from .stock import stocks
 from .support import BOT_SUPPORT
@@ -135,7 +135,7 @@ async def send_company_info(message):
 @dp.message_handler(TextFilter(equals=kb.COMPANY_HISTORY), state="*")
 async def send_history(message):
     """Отправка истории компании."""
-    await message.answer(severstal_history())
+    await message.answer(SEVERSTAL_HISTORY)
 
 
 @dp.message_handler(TextFilter(equals=kb.COMPANY_STRUCTURE), state="*")
