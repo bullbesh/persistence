@@ -1,127 +1,129 @@
+"""TODO: Сделать докстринг"""
 import investpy
 
 
 def yearly_report():
-    data = list()
-    total_revenue = list()
-    income_statement = (
-        str(
-            investpy.stocks.get_stock_financial_summary(
-                stock="CHMF",
-                country="Russia",
-                summary_type="income_statement",
-                period="annual",
-            )
+    """TODO: Сделать докстринг"""
+    income_statement = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="income_statement",
+        period="annual",
+    )
+
+    total_revenue = income_statement["Total Revenue"]
+    conclusion = "Общий доход компании за последние 4 года\n"
+    for i in range(4):
+        conclusion += (
+            f"{income_statement.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"
         )
-    ).split("\n")
-    for value in income_statement[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[1])
-    return f"Общий доход компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return conclusion
 
+def quarterly_report():
+    """TODO: Сделать докстринг"""
+    income_statement = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="income_statement",
+        period="quarterly",
+    )
 
-def quartely_report():
-    data = list()
-    total_revenue = list()
-    income_statement = (
-        str(
-            investpy.stocks.get_stock_financial_summary(
-                stock="CHMF",
-                country="Russia",
-                summary_type="income_statement",
-                period="quarterly",
-            )
+    total_revenue = income_statement["Total Revenue"]
+    conclusion = "Общий доход компании за последние 4 квартала\n"
+    for i in range(4):
+        conclusion += (
+            f"{income_statement.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"
         )
-    ).split("\n")
-    for value in income_statement[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[1])
-    return f"Общий доход компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} - {total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return conclusion
 
+def quarterly_capital():
+    """TODO: Сделать докстринг"""
+    balance_sheet = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="balance_sheet",
+        period="quarterly",
+    )
 
-def quartely_capital():
-    balance_sheet = str(
-        investpy.stocks.get_stock_financial_summary(
-            stock="CHMF",
-            country="Russia",
-            summary_type="balance_sheet",
-            period="quarterly",
+    total_revenue = balance_sheet["Total Assets"]
+    conclusion = "Акционерный доход компании за последние 4 квартала\n"
+    for i in range(4):
+        conclusion += (
+            f"{balance_sheet.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"            
         )
-    ).split("\n")
-    data = list()
-    total_revenue = list()
-    for value in balance_sheet[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[-1])
-    return f"Акционерный капитал компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
-	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return conclusion
 
 
 def yearly_capital():
-    balance_sheet = str(
-        investpy.stocks.get_stock_financial_summary(
-            stock="CHMF",
-            country="Russia",
-            summary_type="balance_sheet",
-            period="annual",
-        )
-    ).split("\n")
-    data = list()
-    total_revenue = list()
-    for value in balance_sheet[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[-1])
-    return f"Акционерный капитал компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
-	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    """TODO: Сделать докстринг"""
+    balance_sheet = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="balance_sheet",
+        period="annual",
+    )
 
+    total_revenue = balance_sheet["Total Assets"]
+    conclusion = "Акционерный капитал компании за последние 4 года\n"
+    for i in range(4):
+        conclusion += (
+            f"{balance_sheet.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"            
+        )
+    return conclusion
 
 def yearly_net_income():
-    net_income = str(
-        investpy.stocks.get_stock_financial_summary(
-            stock="CHMF",
-            country="Russia",
-            summary_type="income_statement ",
-            period="annual",
+    """TODO: Сделать докстринг"""
+    net_income = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="income_statement",
+        period="annual",
+    )
+
+    total_revenue = net_income["Total Revenue"]
+    conclusion = "Чистая прибыль компании за последние 4 года\n"
+    for i in range(4):
+        conclusion += (
+            f"{net_income.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"            
         )
-    ).split("\n")
-    data = list()
-    total_revenue = list()
-    for value in net_income[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[4])
-    return f"Чистая прибыль компании за последние 4 года\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
-	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return conclusion
 
 
-def quartely_net_income():
-    net_income = str(
-        investpy.stocks.get_stock_financial_summary(
-            stock="CHMF",
-            country="Russia",
-            summary_type="income_statement ",
-            period="quarterly",
+def quarterly_net_income():
+    """TODO: Сделать докстринг"""
+    net_income = investpy.stocks.get_stock_financial_summary(
+        stock="CHMF",
+        country="Russia",
+        summary_type="income_statement",
+        period="quarterly",
+    )
+
+    total_revenue = net_income["Total Revenue"]
+    conclusion = "Чистая прибыль компании за последние 4 квартала\n"
+    for i in range(4):
+        conclusion += (
+            f"{net_income.index[i].strftime('%Y-%m-%d')} - "
+            f"{total_revenue[i]} млн. USD\n"            
         )
-    ).split("\n")
-    data = list()
-    total_revenue = list()
-    for value in net_income[2:]:
-        data.append(value.split()[0])
-        total_revenue.append(value.split()[4])
-    return f"Чистая прибыль компании за последние 4 квартала\n{data[-1]} - {total_revenue[-1]} млн. USD\n{data[2]} -\
-	{total_revenue[2]} млн. USD\n{data[1]} - {total_revenue[1]} млн. USD\n{data[0]} - {total_revenue[0]} млн. USD"
+    return conclusion
 
 
 report = {
     "Общий доход компании": {
-        "Квартальный отчёт": quartely_report(),
+        "Квартальный отчёт": quarterly_report(),
         "Годовой отчёт": yearly_report(),
     },
     "Акционерный капитал": {
-        "Квартальный отчёт": quartely_capital(),
+        "Квартальный отчёт": quarterly_capital(),
         "Годовой отчёт": yearly_capital(),
     },
     "Чистая прибыль": {
-        "Квартальный отчёт": quartely_net_income(),
+        "Квартальный отчёт": quarterly_net_income(),
         "Годовой отчёт": yearly_net_income(),
     },
 }
