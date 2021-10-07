@@ -1,17 +1,22 @@
+"""TODO: Сделать докстринг"""
+from datetime import datetime, timedelta
+
 import investpy
-from datetime import timedelta, datetime
 
 
 def stocks():
-    data_today = datetime.today().strftime("%d/%m/%Y")
-
+    """TODO: Сделать докстринг"""
+    date_today = datetime.today().strftime("%d/%m/%Y")
     last_date = (datetime.today() - timedelta(days=5)).strftime("%d/%m/%Y")
+    currently_date = datetime.today().strftime('%X')
 
     data = investpy.stocks.get_stock_historical_data(
         stock="CHMF",
         country="Russia",
         from_date=last_date,
-        to_date=data_today,
+        to_date=date_today,
         as_json=True,
     )
-    return f"{((data.split())[-5])[:-1]} рублей стоит одна акция Северстали\nОбновлено в {(datetime.today()).strftime('%X')}"
+    conclusion = data["Close"]
+    return f"{int(conclusion[3])} рублей стоит одна акция Северстали\n"
+    f"Обновлено в {currently_date}"
